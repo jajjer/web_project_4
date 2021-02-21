@@ -1,0 +1,6 @@
+.element__button {
+    background-image: url(/images/element\ heart.svg);
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 19px;
+}

@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <title>Around the U.S.</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <div class="vector"></div>
+
+    </header>
+
+    <main>
+
+        <section class="profile">
+            <img class="profile__avatar" src="images/Cousteau.jpg" alt="Jacques Cousteau">
+            <div class="profile__info">
+                <div class="profile__text">
+                    <h2 class="profile__title">Jacques Cousteau</h2>
+                    <p class="profile__subtitle">Explorer</p>
+                </div>
+                <button data-popup-target="#popup" class="profile__button"></button>
+                <div class="popup popup_opened">
+                    <div class="popup__container" id="popup__container">
+                        <div class="popup__bg">
+                            <h3 class="popup__title">Edit Profile</h3>
+                            <input class="popup__name" placeholder="Jacques Cousteau">
+                            <input class="popup__about" placeholder="Explorer">
+                            <button class="popup__save">Save</button>
+                        </div>
+                        <button data-close-button class="popup__close-button"></button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="profile__add-button"></div>
+        </section>
+
+        <section class="elements">
+            <ul class="element__container">
+                <li class="element">
+                    <img class="element__image" src="images/yosemite.png" alt="Yosemite">
+                    <div class="element__group">
+                        <h2 class="element__title">Yosemite Valley</h2>
+                        <div class="element__button"></div>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/Lake Louise.png" alt="Lake Louise">
+                    <div class="element__group">
+                        <h2 class="element__title">Lake Louise</h2>
+                        <div class="element__button"></div>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/Bald Mountains.png" alt="Bald Mountains">
+                    <div class="element__group">
+                        <h2 class="element__title">Bald Mountains</h2>
+                        <div class="element__button"></div>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/Latemar.png" alt="Latemar">
+                    <div class="element__group">
+                        <h2 class="element__title">Latemar</h2>
+                        <div class="element__button"></div>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/Vanoise.png" alt="Vanoise National Park">
+                    <div class="element__group">
+                        <h2 class="element__title">Vanoise National Park</h2>
+                        <div class="element__button"></div>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/Lago di Braies.png" alt="Lago di Braies">
+                    <div class="element__group">
+                        <h2 class="element__title">Lago di Braies</h2>
+                        <div class="element__button"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copy-right">© 2020 Around The U.S.</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+
+</html>

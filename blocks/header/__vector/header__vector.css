@@ -1,0 +1,16 @@
+.vector {
+    background-image: url(/images/vector.png);
+    background-repeat: no-repeat;
+    height: 33px;
+    width: 173px;
+    margin: 0px 707px 41px 0px;
+}
+
+@media screen and (max-width: 568px) {
+    .vector {
+        height: 24px;
+        width: 126px;
+        margin: 0px 167px 32px 27px;
+        background-size: cover;
+    }
+}
