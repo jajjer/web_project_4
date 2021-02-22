@@ -23,19 +23,8 @@
                     <p class="profile__subtitle">Explorer</p>
                 </div>
                 <button data-popup-target="#popup" class="profile__button"></button>
-                <div class="popup popup_opened">
-                    <div class="popup__container" id="popup__container">
-                        <div class="popup__bg">
-                            <h3 class="popup__title">Edit Profile</h3>
-                            <input class="popup__name" placeholder="Jacques Cousteau">
-                            <input class="popup__about" placeholder="Explorer">
-                            <button class="popup__save">Save</button>
-                        </div>
-                        <button data-close-button class="popup__close-button"></button>
-                    </div>
-                </div>
             </div>
-            <div class="profile__add-button"></div>
+            <button class="profile__add-button"></button>
         </section>
 
         <section class="elements">
@@ -88,6 +77,19 @@
     <footer class="footer">
         <p class="footer__copy-right">© 2020 Around The U.S.</p>
     </footer>
+
+    <div class="popup popup_opened">
+        <div class="popup__container" id="popup__container">
+            <div class="popup__bg">
+                <h3 class="popup__title">Edit Profile</h3>
+                <input class="popup__name" placeholder="Jacques Cousteau">
+                <input class="popup__about" placeholder="Explorer">
+                <button class="popup__save">Save</button>
+            </div>
+            <button data-close-button class="popup__close-button"></button>
+        </div>
+    </div>
+
     <script src="/script.js"></script>
 </body>
 

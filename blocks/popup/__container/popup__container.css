@@ -1,0 +1,9 @@
+@import url(/blocks/popup/__container/_opened/popup__container_opened.css);
+.popup__container {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
