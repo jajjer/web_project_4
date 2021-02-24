@@ -9,8 +9,16 @@
     border: none;
     font-family: 'Inter', Arial, sans-serif;
     margin: 0 36px 36.51px 36px;
+    transition: opacity 0.4s ease-in;
 }
 
 .popup__save:hover {
     opacity: 0.8;
+}
+
+@media screen and (max-width: 568px) {
+    .popup__save {
+        font-size: 14px;
+        line-height: 17px;
+    }
 }

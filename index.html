@@ -9,7 +9,7 @@
 
 <body class="page">
     <header class="header">
-        <div class="vector"></div>
+        <div class="header__logo"></div>
 
     </header>
 
@@ -19,56 +19,68 @@
             <img class="profile__avatar" src="images/Cousteau.jpg" alt="Jacques Cousteau">
             <div class="profile__info">
                 <div class="profile__text">
-                    <h2 class="profile__title">Jacques Cousteau</h2>
+                    <h1 class="profile__title">Jacques Cousteau</h1>
                     <p class="profile__subtitle">Explorer</p>
                 </div>
-                <button class="profile__button"></button>
+                <button type="button" class="profile__button"></button>
             </div>
-            <button class="profile__add-button" id="profile__add-button"></button>
+            <button type="button" class="profile__add-button" id="profile__add-button"></button>
         </section>
 
         <section class="elements">
             <ul class="element">
                 <li class="element__item">
-                    <img class="element__image" src="images/yosemite.png" alt="Yosemite">
-                    <div class="element__group">
-                        <h2 class="element__title">Yosemite Valley</h2>
-                        <div class="element__button"></div>
+                    <div class="element__container">
+                        <img class="element__image" src="images/yosemite.png" alt="Yosemite">
+                        <div class="element__group">
+                            <h2 class="element__title">Yosemite Valley</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
                     </div>
                 </li>
                 <li class="element__item">
-                    <img class="element__image" src="images/Lake Louise.png" alt="Lake Louise">
-                    <div class="element__group">
-                        <h2 class="element__title">Lake Louise</h2>
-                        <div class="element__button"></div>
+                    <div class="element__container">
+                        <img class="element__image" src="images/Lake Louise.png" alt="Lake Louise">
+                        <div class="element__group">
+                            <h2 class="element__title">Lake Louise</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
                     </div>
                 </li>
                 <li class="element__item">
-                    <img class="element__image" src="images/Bald Mountains.png" alt="Bald Mountains">
-                    <div class="element__group">
-                        <h2 class="element__title">Bald Mountains</h2>
-                        <div class="element__button"></div>
+                    <div class="element__container">
+                        <img class="element__image" src="images/Bald Mountains.png" alt="Bald Mountains">
+                        <div class="element__group">
+                            <h2 class="element__title">Bald Mountains</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
                     </div>
                 </li>
                 <li class="element__item">
-                    <img class="element__image" src="images/Latemar.png" alt="Latemar">
-                    <div class="element__group">
-                        <h2 class="element__title">Latemar</h2>
-                        <div class="element__button"></div>
+                    <div class="element__container">
+                        <img class="element__image" src="images/Latemar.png" alt="Latemar">
+                        <div class="element__group">
+                            <h2 class="element__title">Latemar</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
                     </div>
                 </li>
                 <li class="element__item">
-                    <img class="element__image" src="images/Vanoise.png" alt="Vanoise National Park">
-                    <div class="element__group">
-                        <h2 class="element__title">Vanoise National Park</h2>
-                        <div class="element__button"></div>
+                    <div class="element__container">
+                        <img class="element__image" src="images/Vanoise.png" alt="Vanoise National Park">
+                        <div class="element__group">
+                            <h2 class="element__title">Vanoise National Park</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
                     </div>
                 </li>
                 <li class="element__item">
-                    <img class="element__image" src="images/Lago di Braies.png" alt="Lago di Braies">
-                    <div class="element__group">
-                        <h2 class="element__title">Lago di Braies</h2>
-                        <div class="element__button"></div>
+                    <div class="element__container">
+                        <img class="element__image" src="images/Lago di Braies.png" alt="Lago di Braies">
+                        <div class="element__group">
+                            <h2 class="element__title">Lago di Braies</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -78,19 +90,21 @@
         <p class="footer__copy-right">© 2020 Around The U.S.</p>
     </footer>
 
-    <div class="popup popup_opened">
+    <div class="popup" id="popup">
         <div class="popup__container" id="popup__container">
             <div class="popup__bg">
                 <h3 class="popup__title">Edit Profile</h3>
-                <input class="popup__name" placeholder="Jacques Cousteau">
-                <input class="popup__about" placeholder="Explorer">
-                <button class="popup__save">Save</button>
+                <form>
+                    <input class="popup__profile popup__profile__name" placeholder="Name">
+                    <input class="popup__profile popup__profile__about" placeholder="Occupation">
+                </form>
+                <button type="button" class="popup__save">Save</button>
             </div>
-            <button class="popup__close"></button>
+            <button class="popup__close" type="button"></button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>

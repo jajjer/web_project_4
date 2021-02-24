@@ -1,6 +1,6 @@
 .element__item {
-    display: flex;
     position: relative;
+    justify-content: center;
     max-width: 282px;
     min-height: 361px;
     background: #FFFFFF;

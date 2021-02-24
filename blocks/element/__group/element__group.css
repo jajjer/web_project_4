@@ -1,8 +1,6 @@
 .element__group {
-    position: absolute;
     display: flex;
     flex-direction: row;
-    margin: 307px 15px 31px 21px;
     width: 246px;
     justify-content: space-between;
     align-items: center;

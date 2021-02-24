@@ -1,8 +1,9 @@
-.popup__name {
+.popup__profile {
+    font-family: 'Inter', Arial, sans-serif;
     width: 358px;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid #000000 0.2;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
     margin: 54px 36px 29.74px 36px;
 }

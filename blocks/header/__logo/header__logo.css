@@ -1,5 +1,5 @@
-.vector {
-    background-image: url(../../../images/vector.png);
+.header__logo {
+    background-image: url(../../../images/vector.svg);
     background-repeat: no-repeat;
     height: 33px;
     width: 173px;

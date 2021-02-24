@@ -1,19 +1,19 @@
 .profile__button {
-    background: url(../../../images/profile-button.png);
+    background: url(../../../images/profile-button.svg);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
     width: 24px;
     height: 24px;
     border: 1px white solid;
-    margin-left: 25px;
+    margin-left: 18px;
     outline: none;
     cursor: pointer;
     transition: opacity 0.4s ease-in;
 }
 
 .profile__button:hover {
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 568px) {

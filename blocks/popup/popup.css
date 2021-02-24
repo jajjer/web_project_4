@@ -5,14 +5,20 @@
 @import url(../popup/__name/popup__name.css);
 @import url(../popup/__save/popup__save.css);
 @import url(../popup/__title/popup__title.css);
-@import url(../popup/_opened/popup_opened.css);
+@import url(../popup/__profile/popup__profile.css);
+@import url(../popup/__profile/__about/popup__profile__about.css);
+@import url(../popup/__profile/__name/popup__profile__name.css);
+@import url(../popup/__form/popup__form.css);
 .popup {
     position: fixed;
+    /*display: flex;
+    align-items: center;
+    justify-content: center;*/
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     display: none;
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
