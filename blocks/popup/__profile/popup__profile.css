@@ -1,3 +1,6 @@
+/*@import url(../__profile/_about/popup__profile_about.css);
+@import url(../__profile/_name/popup__profile_name.css);*/
+
 .popup__profile {
     font-family: 'Inter', Arial, sans-serif;
     width: 358px;

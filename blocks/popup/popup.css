@@ -1,24 +1,19 @@
-@import url(../popup/__about/popup__about.css);
 @import url(../popup/__bg/popup__bg.css);
 @import url(../popup/__close/popup__close.css);
 @import url(../popup/__container/popup__container.css);
-@import url(../popup/__name/popup__name.css);
 @import url(../popup/__save/popup__save.css);
 @import url(../popup/__title/popup__title.css);
 @import url(../popup/__profile/popup__profile.css);
-@import url(../popup/__profile/__about/popup__profile_about.css);
-@import url(../popup/__profile/__name/popup__profile_name.css);
-@import url(../popup/__form/popup__form.css);
+@import url(../popup/__profile/_about/popup__profile_about.css);
+@import url(../popup/__profile/_name/popup__profile_name.css);
 .popup {
     position: fixed;
-    /*display: flex;
+    display: flex;
     align-items: center;
-    justify-content: center;*/
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    display: none;
-    /*pointer-events: none;*/
 }
