@@ -6,8 +6,8 @@
 @import url(../popup/__save/popup__save.css);
 @import url(../popup/__title/popup__title.css);
 @import url(../popup/__profile/popup__profile.css);
-@import url(../popup/__profile/__about/popup__profile__about.css);
-@import url(../popup/__profile/__name/popup__profile__name.css);
+@import url(../popup/__profile/__about/popup__profile_about.css);
+@import url(../popup/__profile/__name/popup__profile_name.css);
 @import url(../popup/__form/popup__form.css);
 .popup {
     position: fixed;
