@@ -7,7 +7,8 @@
 @import url(../popup/__profile/_about/popup__profile_about.css);
 @import url(../popup/__profile/_name/popup__profile_name.css);
 .popup {
-    position: fixed;
+    display: none;
+    /*position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,5 +16,5 @@
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0;*/
 }
