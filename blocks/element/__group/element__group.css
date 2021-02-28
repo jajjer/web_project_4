@@ -4,5 +4,6 @@
     width: 246px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 25px;
+    margin: 25px auto 31px;
+    /*margin-top: 25px;*/
 }
