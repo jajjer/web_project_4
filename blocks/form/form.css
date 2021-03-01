@@ -1,0 +1,12 @@
+@import url(../form/__input/form__input.css);
+@import url(../form/__input_about/form__input_about.css);
+@import url(../form/__input_name/form__input_name.css);
+@import url(../form/__save/form__save.css);
+@import url(../form/__title/form__title.css);
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0;
+    max-width: 430px;
+}
