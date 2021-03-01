@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 568px) {
-    .vector {
+    .header__logo {
         height: 24px;
         width: 126px;
         margin: 0px 167px 32px 27px;

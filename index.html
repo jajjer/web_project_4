@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,10 +21,11 @@
             <div class="profile__info">
                 <div class="profile__text">
                     <h1 class="profile__title">Jacques Cousteau</h1>
-                    <p class="profile__subtitle">Explorer</p>
+                    <button type="button" class="profile__button"></button>
                 </div>
-                <button type="button" class="profile__button"></button>
+                <p class="profile__subtitle">Explorer</p>
             </div>
+
             <button type="button" class="profile__add-button" id="profile__add-button"></button>
         </section>
 
@@ -40,7 +42,7 @@
                 </li>
                 <li class="element__item">
                     <div class="element__container">
-                        <img class="element__image" src="images/Lake Louise.png" alt="Lake Louise">
+                        <img class="element__image" src="images/Lake-Louise.png" alt="Lake Louise">
                         <div class="element__group">
                             <h2 class="element__title">Lake Louise</h2>
                             <button type="button" class="element__button"></button>
@@ -49,7 +51,7 @@
                 </li>
                 <li class="element__item">
                     <div class="element__container">
-                        <img class="element__image" src="images/Bald Mountains.png" alt="Bald Mountains">
+                        <img class="element__image" src="images/Bald-Mountains.png" alt="Bald Mountains">
                         <div class="element__group">
                             <h2 class="element__title">Bald Mountains</h2>
                             <button type="button" class="element__button"></button>
@@ -76,7 +78,7 @@
                 </li>
                 <li class="element__item">
                     <div class="element__container">
-                        <img class="element__image" src="images/Lago di Braies.png" alt="Lago di Braies">
+                        <img class="element__image" src="images/Lago-di-Braies.png" alt="Lago di Braies">
                         <div class="element__group">
                             <h2 class="element__title">Lago di Braies</h2>
                             <button type="button" class="element__button"></button>
@@ -93,11 +95,11 @@
     <div class="popup" id="popup">
         <div class="popup__container" id="popup__container">
             <div class="popup__bg">
-                <h3 class="popup__title">Edit Profile</h3>
-                <form class="popup__form">
-                    <input class="popup__profile popup__profile_name" value="Jacques Cousteau" placeholder="Name">
-                    <input class="popup__profile popup__profile_about" value="Explorer" placeholder="Occupation">
-                    <button type="submit" class="popup__save">Save</button>
+                <form class="form" name="Profile form">
+                    <h3 class="form__title">Edit Profile</h3>
+                    <input class="form__input form__input_name" value="Jacques Cousteau" placeholder="Name" name="Profile Name">
+                    <input class="form__input form__input_about" value="Explorer" placeholder="Occupation" name="Profile Job">
+                    <button type="submit" class="form__save">Save</button>
                 </form>
             </div>
             <button class="popup__close" type="button"></button>

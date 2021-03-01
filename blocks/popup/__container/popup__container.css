@@ -1,8 +1,5 @@
 .popup__container {
-    /*position: relative;
     display: flex;
-    
-    margin: 0 auto;*/
     position: fixed;
     display: flex;
     flex-direction: row;
