@@ -1,14 +1,11 @@
 .popup__bg {
-    max-width: 430px;
-    height: 330px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
     display: flex;
+    position: relative;
 }
 
 @media screen and (max-width: 568px) {
     .popup__bg {
-        width: 282px;
+        flex-direction: column;
+        top: 123px;
     }
 }
