@@ -4,6 +4,12 @@
     margin: 0 auto 0;
 }
 
+@media screen and (max-width: 920px) {
+    .page {
+        max-width: 920px;
+    }
+}
+
 @media screen and (max-width: 568px) {
     .page {
         max-width: 568px;

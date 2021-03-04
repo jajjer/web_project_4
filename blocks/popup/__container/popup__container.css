@@ -11,3 +11,8 @@
     left: 0;
 }
 
+@media screen and (max-width: 568px) {
+    .popup__container {
+        align-items: unset;
+    }
+}
