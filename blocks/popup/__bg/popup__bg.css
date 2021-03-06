@@ -6,6 +6,5 @@
 @media screen and (max-width: 568px) {
     .popup__bg {
         flex-direction: column;
-        top: 123px;
     }
 }
