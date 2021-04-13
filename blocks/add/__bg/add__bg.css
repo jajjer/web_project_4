@@ -1,0 +1,10 @@
+.add__bg {
+    display: flex;
+    position: relative;
+}
+
+@media screen and (max-width: 568px) {
+    .add__bg {
+        flex-direction: column;
+    }
+}

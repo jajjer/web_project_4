@@ -1,6 +1,5 @@
-@import url(./_active/element__button_active.css);
-.element__button {
-    background: url(../../../images/heart.svg);
+.element__button_active {
+    background: url(../../../../images/filledblackheart.svg);
     background-repeat: no-repeat;
     width: 21px;
     height: 19px;
@@ -9,8 +8,4 @@
     outline: none;
     transition: opacity 0.4s ease-in;
     padding: 0;
-}
-
-.element__button:hover {
-    opacity: 0.5;
 }
