@@ -1,0 +1,16 @@
+@import url(./__close/modal__close.css);
+@import url(./_opened/modal_opened.css);
+@import url(./__image/modal__image.css);
+@import url(./__title/modal__title.css);
+.modal {
+    display: none;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

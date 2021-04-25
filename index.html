@@ -63,18 +63,26 @@
         </div>
     </div>
 
+    <div class="modal modal_opened">
+        <button class="modal__close" type="button"></button>
+        <img class="modal__image">
+        <div class="modal__title"></div>
+    </div>
+
     <template id="template__photo">
-        <ul class="template__list">
             <li class="element__item">
                 <div class="element__container">
-                     <img class="element__image" src="" alt="">
+                    <div class="element__pics">
+                        
+                        <div class="element__image"></div>
+                        <div class="element__trash"></div>
+                    </div>
                      <div class="element__group">
                         <h2 class="element__title"></h2>
                         <button type="button" class="element__button"></button>
                     </div>
                 </div>
              </li>
-        </ul>
 </template>
 
     <script src="scripts/script.js"></script>

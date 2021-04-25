@@ -19,9 +19,7 @@ const likeButton = document.querySelector(".element__button");
 const likeButtonActive = document.querySelector(".element__button_active");
 const elementTitle = document.querySelector(".element__title");
 const elementImage = document.querySelector(".element__image");
-const template = document.querySelector("#template__photo").content;
-const newElement = template.querySelector(".element__item").cloneNode(true);
-const templateList = document.querySelector(".template__list");
+const elementList = document.querySelector(".element");
 
 const initialCards = [{
         name: "Yosemite Valley",
@@ -49,13 +47,47 @@ const initialCards = [{
     }
 ];
 
-initialCards.forEach(element => console.log(element.name = elementTitle));
-initialCards.forEach(element => console.log(element.link = elementImage));
+//initialCards.forEach(card => {
+//  const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
 
+//const cardElement = cardTemplate.cloneNode(true);
+//const cardImage = cardElement.querySelector(".element__image");
+//const cardTitle = cardElement.querySelector(".element__title");
 
-newElement.querySelector(".element__image").src =
-    templateList.append(newElement);
+//cardImage.style.backgroundImage = `url(${card.link})`;
+//cardTitle.textContent = card.name;
 
+//elementList.append(cardElement);
+//});
+
+//initialCards.forEach(card => {
+//  const cardElement = createCard(card);
+
+//elementList.append(cardElement);
+//});
+
+function createCard(card) {
+    const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
+
+    const cardElement = cardTemplate.cloneNode(true);
+    const cardImage = cardElement.querySelector(".element__image");
+    const cardTitle = cardElement.querySelector(".element__title");
+
+    cardImage.style.backgroundImage = `url(${card.link})`;
+    cardTitle.textContent = card.name;
+
+    cardImage.addEventListener('click', () => handlePreviewPicture(card));
+
+    return cardElement;
+};
+
+function renderCard(card, elementList) {
+    elementList.append(createCard(card));
+};
+
+initialCards.forEach(card => {
+    renderCard(card, elementList)
+})
 
 function openAdd() {
     add.classList.add('add_opened')
@@ -66,8 +98,8 @@ function closeAdd() {
 }
 
 function like() {
-    likeButton.classList.add('element__button_active')
-    likeButton.classList.remove('element__button')
+    likeButton.classList.add('element__button_active');
+    likeButton.classList.remove('element__button');
 }
 
 function openPopup() {
@@ -86,6 +118,22 @@ function handleFormSubmit(evt) {
     profileTitle.textContent = nameInput.value;
     profileSubtitle.textContent = jobInput.value;
     closePopup();
+}
+
+const imageModalWindow = document.querySelector(".modal");
+const imageElement = imageModalWindow.querySelector(".modal__image");
+const imageCaption = imageModalWindow.querySelector(".modal__title");
+
+function handlePreviewPicture(data) {
+    imageElement.src = data.link;
+    imageElement.alt = `Image ${data.name}`;
+
+    imageCaption.textContent = data.name;
+    toggleModalWindow(imageModalWindow);
+}
+
+function toggleModalWindow(modalWindow) {
+    modalWindow.classList.toggle("modal_opened")
 }
 
 profileButton.addEventListener("click", openPopup);
