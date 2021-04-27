@@ -20,6 +20,8 @@ const likeButtonActive = document.querySelector(".element__button_active");
 const elementTitle = document.querySelector(".element__title");
 const elementImage = document.querySelector(".element__image");
 const elementList = document.querySelector(".element");
+const addTitle = document.querySelector(".form__input_type_title");
+const addImage = document.querySelector(".form__input_type_image");
 
 const initialCards = [{
         name: "Yosemite Valley",
