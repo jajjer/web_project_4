@@ -15,7 +15,7 @@ const addClose = document.querySelector(".add__close");
 const addButton = document.querySelector(".profile__add-button");
 const titleInput = document.querySelector(".form__input_type_title");
 const imageInput = document.querySelector(".form__input_type_image");
-const likeButton = document.querySelector(".element__button");
+
 const likeButtonActive = document.querySelector(".element__button_active");
 const elementTitle = document.querySelector(".element__title");
 const elementImage = document.querySelector(".element__image");
@@ -75,10 +75,14 @@ function createCard(card) {
     const cardImage = cardElement.querySelector(".element__image");
     const cardTitle = cardElement.querySelector(".element__title");
 
+    const likeButton = document.querySelector(".element__button");
+
     cardImage.style.backgroundImage = `url(${card.link})`;
     cardTitle.textContent = card.name;
 
     cardImage.addEventListener('click', () => handlePreviewPicture(card));
+    likeButton.addEventListener('click', () => like(card));
+
 
     return cardElement;
 };
@@ -89,7 +93,12 @@ function renderCard(card, elementList) {
 
 initialCards.forEach(card => {
     renderCard(card, elementList)
-})
+});
+
+function like(card) {
+    likeButton.classList.add('element__button_active');
+    likeButton.classList.remove('element__button');
+};
 
 function openAdd() {
     add.classList.add('add_opened')
@@ -97,11 +106,6 @@ function openAdd() {
 
 function closeAdd() {
     add.classList.remove('add_opened')
-}
-
-function like() {
-    likeButton.classList.add('element__button_active');
-    likeButton.classList.remove('element__button');
 }
 
 function openPopup() {
@@ -143,4 +147,3 @@ popupClose.addEventListener("click", closePopup);
 formElement.addEventListener("submit", handleFormSubmit);
 addButton.addEventListener("click", openAdd);
 addClose.addEventListener("click", closeAdd);
-likeButton.addEventListener("click", like);
