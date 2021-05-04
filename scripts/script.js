@@ -87,8 +87,10 @@ function createCard(card) {
     cardImage.addEventListener('click', () => handlePreviewPicture(card));
     //likeButton.addEventListener('click', (e) => e.target.toggle);
 
+    //likeButton.addEventListener("click", like);
+
     likeButton.addEventListener("click", (e) =>
-        e.target.classList.toggle("element__button_active")
+        likeButton.classList.toggle("element__button_active")
     );
 
     return cardElement;
@@ -102,10 +104,10 @@ initialCards.forEach(card => {
     renderCard(card, elementList)
 });
 
-//function like() {
-//  likeButton.classList.add('element__button_active');
-//likeButton.classList.remove('element__button');
-//};
+function like() {
+    likeButton.classList.add('element__button_active');
+    likeButton.classList.remove('element__button');
+};
 
 function openAdd() {
     add.classList.add('add_opened')
