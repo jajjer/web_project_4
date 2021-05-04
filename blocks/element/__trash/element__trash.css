@@ -1,7 +1,13 @@
 .element__trash {
     background-image: url(../../../images/trash.png);
+    background-repeat: no-repeat;
     width: 18px;
     height: 20px;
     position: absolute;
     margin: 18px 15px 244.7px 249px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: opacity 0.4s ease-in;
+    padding: 0;
 }
