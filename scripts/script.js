@@ -23,6 +23,8 @@ const elementList = document.querySelector(".element");
 const addTitle = document.querySelector(".form__input_type_title");
 const addImage = document.querySelector(".form__input_type_image");
 
+//const likeButton = document.querySelector(".element__button");
+
 const initialCards = [{
         name: "Yosemite Valley",
         link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
@@ -75,14 +77,19 @@ function createCard(card) {
     const cardImage = cardElement.querySelector(".element__image");
     const cardTitle = cardElement.querySelector(".element__title");
 
-    const likeButton = document.querySelector(".element__button");
+    const likeButton = cardElement.querySelector(".element__button");
+
+    //const deleteButton = cardElement.querySelector(".element__button");
 
     cardImage.style.backgroundImage = `url(${card.link})`;
     cardTitle.textContent = card.name;
 
     cardImage.addEventListener('click', () => handlePreviewPicture(card));
-    likeButton.addEventListener('click', () => like(card));
+    //likeButton.addEventListener('click', (e) => e.target.toggle);
 
+    likeButton.addEventListener("click", (e) =>
+        e.target.classList.toggle("element__button_active")
+    );
 
     return cardElement;
 };
@@ -95,10 +102,10 @@ initialCards.forEach(card => {
     renderCard(card, elementList)
 });
 
-function like(card) {
-    likeButton.classList.add('element__button_active');
-    likeButton.classList.remove('element__button');
-};
+//function like() {
+//  likeButton.classList.add('element__button_active');
+//likeButton.classList.remove('element__button');
+//};
 
 function openAdd() {
     add.classList.add('add_opened')
