@@ -79,7 +79,9 @@ function createCard(card) {
 
     const likeButton = cardElement.querySelector(".element__button");
 
-    //const deleteButton = cardElement.querySelector(".element__button");
+    const deleteButton = cardElement.querySelector(".element__trash");
+
+    const trashWrapper = cardElement.querySelector(".element__container");
 
     cardImage.style.backgroundImage = `url(${card.link})`;
     cardTitle.textContent = card.name;
@@ -93,6 +95,10 @@ function createCard(card) {
         likeButton.classList.toggle("element__button_active")
     );
 
+    deleteButton.addEventListener("click", (e) =>
+        trashWrapper.parentElement.remove()
+    );
+
     return cardElement;
 };
 
@@ -104,10 +110,10 @@ initialCards.forEach(card => {
     renderCard(card, elementList)
 });
 
-function like() {
-    likeButton.classList.add('element__button_active');
-    likeButton.classList.remove('element__button');
-};
+//function like() {
+//  likeButton.classList.add('element__button_active');
+//likeButton.classList.remove('element__button');
+//};
 
 function openAdd() {
     add.classList.add('add_opened')
