@@ -14,3 +14,4 @@
 @import url(../blocks/element/__button_active/element__button_active.css);
 @import url(../blocks/template/template.css);
 @import url(../blocks/modal/modal.css);
+@import url(../blocks/modal/_opened/modal_opened.css);

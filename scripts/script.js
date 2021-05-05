@@ -23,7 +23,6 @@ const elementList = document.querySelector(".element");
 const addTitle = document.querySelector(".form__input_type_title");
 const addImage = document.querySelector(".form__input_type_image");
 
-//const likeButton = document.querySelector(".element__button");
 
 const initialCards = [{
         name: "Yosemite Valley",
@@ -51,25 +50,6 @@ const initialCards = [{
     }
 ];
 
-//initialCards.forEach(card => {
-//  const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
-
-//const cardElement = cardTemplate.cloneNode(true);
-//const cardImage = cardElement.querySelector(".element__image");
-//const cardTitle = cardElement.querySelector(".element__title");
-
-//cardImage.style.backgroundImage = `url(${card.link})`;
-//cardTitle.textContent = card.name;
-
-//elementList.append(cardElement);
-//});
-
-//initialCards.forEach(card => {
-//  const cardElement = createCard(card);
-
-//elementList.append(cardElement);
-//});
-
 function createCard(card) {
     const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
 
@@ -87,9 +67,6 @@ function createCard(card) {
     cardTitle.textContent = card.name;
 
     cardImage.addEventListener('click', () => handlePreviewPicture(card));
-    //likeButton.addEventListener('click', (e) => e.target.toggle);
-
-    //likeButton.addEventListener("click", like);
 
     likeButton.addEventListener("click", (e) =>
         likeButton.classList.toggle("element__button_active")
@@ -109,11 +86,6 @@ function renderCard(card, elementList) {
 initialCards.forEach(card => {
     renderCard(card, elementList)
 });
-
-//function like() {
-//  likeButton.classList.add('element__button_active');
-//likeButton.classList.remove('element__button');
-//};
 
 function openAdd() {
     add.classList.add('add_opened')
@@ -154,7 +126,7 @@ function handlePreviewPicture(data) {
 }
 
 function toggleModalWindow(modalWindow) {
-    modalWindow.classList.toggle("modal_opened")
+    modalWindow.classList.toggle(".modal_opened")
 }
 
 profileButton.addEventListener("click", openPopup);
