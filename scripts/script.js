@@ -3,7 +3,7 @@ const popupOpened = document.querySelector(".popup_opened");
 const popupClose = document.querySelector(".popup__close");
 const popup = document.querySelector(".popup");
 const popupSave = document.querySelector(".form__save");
-const formElement = document.querySelector(".form");
+const formProfileElement = document.querySelector(".form_type_profile");
 const nameInput = document.querySelector(".form__input_type_name");
 const jobInput = document.querySelector(".form__input_type_about");
 const profileTitle = document.querySelector(".profile__title");
@@ -22,6 +22,8 @@ const elementImage = document.querySelector(".element__image");
 const elementList = document.querySelector(".element");
 const addTitle = document.querySelector(".form__input_type_title");
 const addImage = document.querySelector(".form__input_type_image");
+
+const formAddElement = document.querySelector(".form_type_add")
 
 
 const initialCards = [{
@@ -87,6 +89,21 @@ initialCards.forEach(card => {
     renderCard(card, elementList)
 });
 
+function addCard() {
+    //evt.preventDefault();
+    let newCard = { name: "", link: "" };
+    newCard.name = addTitle.value;
+    newCard.link = addImage.value;
+
+    initialCards.push(addCard);
+};
+
+//function addCard (evt) {
+//  evt.preventDefault();
+//addTitle.value = 
+//addImage.value =
+//}
+
 function openAdd() {
     add.classList.add('add_opened')
 }
@@ -131,6 +148,7 @@ function toggleModalWindow(modalWindow) {
 
 profileButton.addEventListener("click", openPopup);
 popupClose.addEventListener("click", closePopup);
-formElement.addEventListener("submit", handleFormSubmit);
+formProfileElement.addEventListener("submit", handleFormSubmit);
 addButton.addEventListener("click", openAdd);
 addClose.addEventListener("click", closeAdd);
+formAddElement.addEventListener("submit", addCard)
