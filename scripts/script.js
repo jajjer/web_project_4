@@ -94,9 +94,9 @@ function addCard() {
     let newCard = { name: "", link: "" };
     newCard.name = addTitle.value;
     newCard.link = addImage.value;
-
-    initialCards.push(addCard);
 };
+
+initialCards.push(addCard);
 
 //function addCard (evt) {
 //  evt.preventDefault();
