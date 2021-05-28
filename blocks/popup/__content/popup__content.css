@@ -1,10 +1,11 @@
-.popup__bg {
+.popup__content {
     display: flex;
     position: relative;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 568px) {
-    .popup__bg {
+    .popup__content {
         flex-direction: column;
     }
 }

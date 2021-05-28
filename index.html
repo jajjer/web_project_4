@@ -1,6 +1,3 @@
-<!--Reviewer, can you please point out where some of my mistakes are? I have spent hours and hours trying to figure this out. I asked my tutor to point out some of my mistakes and he said to ask the reviewer, but it can't be reviewed unless it works properly so I am very very very stuck and would greatly appreciate any help you can give me.-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,61 +31,112 @@
 
         <section class="elements">
             <ul class="element">
-
+                <li class="element__item">
+                    <div class="element__container">
+                        <img class="element__image" src="images/yosemite.png" alt="Yosemite">
+                        <div class="element__group">
+                            <h2 class="element__title">Yosemite Valley</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <div class="element__container">
+                        <img class="element__image" src="images/Lake.png" alt="Lake Jacob">
+                        <div class="element__group">
+                            <h2 class="element__title">Lake Louise</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <div class="element__container">
+                        <img class="element__image" src="images/Bald-Mountains.png" alt="Bald Mountains">
+                        <div class="element__group">
+                            <h2 class="element__title">Bald Mountains</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <div class="element__container">
+                        <img class="element__image" src="images/Latemar.png" alt="Latemar">
+                        <div class="element__group">
+                            <h2 class="element__title">Latemar</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <div class="element__container">
+                        <img class="element__image" src="images/Vanoise.png" alt="Vanoise National Park">
+                        <div class="element__group">
+                            <h2 class="element__title">Vanoise National Park</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="element__item">
+                    <div class="element__container">
+                        <img class="element__image" src="images/Lago-di-Braies.png" alt="Lago di Braies">
+                        <div class="element__group">
+                            <h2 class="element__title">Lago di Braies</h2>
+                            <button type="button" class="element__button"></button>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </section>
     </main>
-
     <footer class="footer">
-        <p class="footer__copy-right">© 2020 Around The U.S.</p>
+        <p class="footer__copy-right">Â© 2020 Around The U.S.</p>
     </footer>
 
-    <div class="popup" id="popup">
-        <div class="popup__bg">
-            <form class=" form form_type_profile" name="Profile form">
-                <h3 class="form__title">Edit Profile</h3>
-                <input class="form__input form__input_type_name" value="Jacques Cousteau" placeholder="Name" name="Profile Name">
-                <input class="form__input form__input_type_about" value="Explorer" placeholder="Occupation" name="Profile Job">
-                <button type="submit" class="form__save">Save</button>
+    <div class="popup popup_type_edit">
+        <div class="popup__content">
+            <button type="button" class="popup__close"></button>
+            <form class="popup__form" name="edit-profile">
+                <h3 class="popup__title">Edit Profile</h3>
+                <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="name" required>
+                <input type="text" name="description" class="popup__input popup__input_type_description" placeholder="job" required>
+                <button type="submit" class="button popup__button">save</button>
             </form>
-            <button class="popup__close" type="button"></button>
+        </div>
+    </div>
+    <div class="popup popup_type_new-card">
+        <div class="popup__content">
+            <button type="button" class="popup__close"></button>
+            <form class="popup__form" name="new-place">
+                <h3 class="popup__title">new place</h3>
+                <input type="text" name="place-name" class="popup__input popup__input_type_card-name" placeholder="name" required>
+                <input type="url" name="link" class="popup__input popup__input_type_url" placeholder="link" required>
+                <button type="submit" class="button popup__button">save</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_image">
+        <div class="popup__content popup__content_content_image">
+            <button type="button" class="popup__close"></button>
+            <img src="" alt="" class="popup__image">
+            <p class="popup__caption"></p>
         </div>
     </div>
 
-    <div class="add" id="add">
-        <div class="add__bg">
-            <form class="form form_type_add" name="Profile form">
-                <h3 class="form__title">New place</h3>
-                <input class="form__input form__input_type_title" placeholder="Title" name="Add Photo Title">
-                <input class="form__input form__input_type_image" placeholder="Image link" name="Add Photo Link">
-                <button type="submit" class="form__save">Save</button>
-            </form>
-            <button class="add__close" type="submit"></button>
-        </div>
-    </div>
-
-    <div class="modal">
-        <button class="modal__close" type="button"></button>
-        <img class="modal__image">
-        <div class="modal__title"></div>
-    </div>
-
-    <template id="template__photo">
-            <li class="element__item">
-                <div class="element__container">
-                    <div class="element__pics">
-                        
-                        <div class="element__image"></div>
-                        <button class="element__trash"></button>
-                    </div>
-                     <div class="element__group">
-                        <h2 class="element__title"></h2>
-                        <button type="button" class="element__button"></button>
-                    </div>
-                </div>
-             </li>
-</template>
-
+    <template id="template__photo"> 
+        <li class="element__item"> 
+            <div class="element__container"> 
+                <div class="element__pics"> 
+                     
+                    <div class="element__image"></div> 
+                    <button class="element__trash"></button> 
+                </div> 
+                 <div class="element__group"> 
+                    <h2 class="element__title"></h2> 
+                    <button type="button" class="element__button"></button> 
+                </div> 
+            </div> 
+         </li> 
+    </template>
     <script src="scripts/script.js"></script>
 </body>
 
