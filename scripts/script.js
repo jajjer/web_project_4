@@ -14,7 +14,8 @@ const popupNewCard = document.querySelector(".popup_type_new-card");
 const addButton = document.querySelector(".profile__add-button");
 const titleInput = document.querySelector(".popup__input_type_card-name");
 const imageInput = document.querySelector(".popup__input_type_url");
-const popupImage = document.querySelector(".popup__content_content_image");
+
+const popupImage = document.querySelector(".popup_type_image");
 
 
 
@@ -119,9 +120,9 @@ function addCard(evt) {
     newCard.name = addTitle.value;
     newCard.link = addImage.value;
 
-    renderCard(newCard, elementList);
+    //renderCard(newCard, elementList);
 
-    //initialCards.prepend(newCard);
+    initialCards.prepend(newCard, elementList);
 };
 
 
@@ -147,6 +148,9 @@ function handleFormSubmit(evt) {
     profileSubtitle.textContent = jobInput.value;
     toggleEdit();
 }
+
+
+
 
 profileButton.addEventListener("click", toggleEdit);
 closeEditButton.addEventListener("click", toggleEdit);
