@@ -92,8 +92,26 @@ initialCards.forEach(card => {
     renderCard(card, elementList)
 });
 
+//function addCard() {
+//  const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
 
+//const cardElement = cardTemplate.cloneNode(true);
+//const cardImage = cardElement.querySelector(".element__image");
+//const cardTitle = cardElement.querySelector(".element__title");
 
+//newCard.name = addTitle.value;
+//newCard.link = addImage.value;
+
+//return cardElement;
+//}
+
+//function renderAddCard(card, elementList) {
+//  elementList.prepend(addCard(card));
+//};
+
+//initialCards.forEach(card => {
+//  renderAddCard(card, elementList)
+//});
 
 function addCard(evt) {
     evt.preventDefault();
@@ -101,7 +119,9 @@ function addCard(evt) {
     newCard.name = addTitle.value;
     newCard.link = addImage.value;
 
-    initialCards.push(newCard);
+    renderCard(newCard, elementList);
+
+    //initialCards.prepend(newCard);
 };
 
 
@@ -134,4 +154,4 @@ formElement.addEventListener("submit", handleFormSubmit);
 addButton.addEventListener("click", toggleNewCard);
 closeNewCardButton.addEventListener("click", toggleNewCard);
 formElement.addEventListener("submit", addCard);
-elementImage.addEventListener("click", toggleImage);
+//elementImage.addEventListener("click", toggleImage);
