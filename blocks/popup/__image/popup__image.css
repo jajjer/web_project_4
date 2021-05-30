@@ -1,1 +1,7 @@
-.popup__image {}
+.popup__image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 433px;
+    height: 540px;
+    position: absolute;
+}

@@ -4,4 +4,7 @@
     align-self: flex-start;
     background-size: cover;
     border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
 }
