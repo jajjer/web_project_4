@@ -164,7 +164,9 @@ function addCard(evt) {
 
     //renderCard(newCard, elementList);
 
-    initialCards.prepend(newCard, elementList);
+    //initialCards.prepend(newCard, elementList);
+    renderCard(newCard, elementList);
+    toggleNewCard();
 };
 
 
