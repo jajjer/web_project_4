@@ -40,29 +40,29 @@
     <div class="popup popup_type_edit">
         <div class="popup__content">
             <button type="button" class="popup__close"></button>
-            <form class="popup__form" name="edit-profile">
+            <form class="popup__form popup__form_type_edit" name="edit-profile">
                 <h3 class="popup__title">Edit Profile</h3>
                 <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="name" required>
                 <input type="text" name="description" class="popup__input popup__input_type_description" placeholder="job" required>
-                <button type="submit" class="button popup__button">save</button>
+                <button type="submit" class="popup__button popup__button_type_edit">save</button>
             </form>
         </div>
     </div>
     <div class="popup popup_type_new-card">
         <div class="popup__content">
             <button type="button" class="popup__close"></button>
-            <form class="popup__form" name="new-place">
-                <h3 class="popup__title">new place</h3>
-                <input type="text" name="place-name" class="popup__input popup__input_type_card-name" placeholder="name" required>
-                <input type="url" name="link" class="popup__input popup__input_type_url" placeholder="link" required>
-                <button type="submit" class="button popup__button">save</button>
+            <form class="popup__form popup__form_type_add" name="new-place">
+                <h3 class="popup__title">New Place</h3>
+                <input type="text" name="place-name" class="popup__input popup__input_type_card-name" placeholder="Title" required>
+                <input type="url" name="link" class="popup__input popup__input_type_url" placeholder="Image Link" required>
+                <button type="submit" class="popup__button popup__button_type_add">save</button>
             </form>
         </div>
     </div>
     <div class="popup popup_type_image">
-        <div class="popup__content popup__content_content_image">
+        <div class="popup__content popup__content_type_preview">
             <button type="button" class="popup__close"></button>
-            <img src="./images/Bald-Mountains.png" alt="test" class="popup__image">
+            <img src="" alt="" class="popup__image">
             <p class="popup__caption"></p>
         </div>
     </div>
@@ -71,7 +71,7 @@
         <li class="element__item"> 
             <div class="element__container"> 
                 <div class="element__pics"> 
-                    <button class="element__image"></button> 
+                    <div class="element__image"></div> 
                     <button class="element__trash"></button> 
                 </div> 
                  <div class="element__group"> 
