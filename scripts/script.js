@@ -1,7 +1,6 @@
 // =====
 // Wrappers
 // =====
-const popup = document.querySelector(".popup");
 const editFormElement = document.querySelector(".popup__form_type_edit");
 const addFormElement = document.querySelector(".popup__form_type_add");
 
@@ -14,7 +13,7 @@ const profileButton = document.querySelector(".profile__button");
 const popupEditSave = document.querySelector(".popup__button_type_edit");
 const popupAddSave = document.querySelector(".popup__button_type_add")
 
-const popupClose = document.querySelector(".popup__close");
+
 //const closeImageButton = popupImage.querySelector('.popup__close');
 const addButton = document.querySelector(".profile__add-button");
 const profileTitle = document.querySelector(".profile__title");
@@ -28,8 +27,6 @@ const profileSubtitle = document.querySelector(".profile__subtitle");
 const popupEdit = document.querySelector(".popup_type_edit");
 const popupNewCard = document.querySelector(".popup_type_new-card");
 const popupImage = document.querySelector(".popup_type_image");
-
-const popupOpened = document.querySelector(".popup_opened");
 
 const popupPicture = document.querySelector(".popup__image");
 const popupCaption = document.querySelector(".popup__caption");
@@ -112,8 +109,6 @@ function createCard(card) {
     const deleteButton = cardElement.querySelector(".element__trash");
     const trashWrapper = cardElement.querySelector(".element__container");
 
-    cardImage.addEventListener('click', () => handlePreviewPicture(card));
-
     likeButton.addEventListener("click", (e) =>
         likeButton.classList.toggle("element__button_active")
     );
@@ -156,7 +151,7 @@ initialCards.forEach(card => {
 
 function addCard(evt) {
     evt.preventDefault();
-    let newCard = { name: "", link: "" };
+    const newCard = { name: "", link: "" };
     newCard.name = titleInput.value;
     newCard.link = imageInput.value;
 
@@ -169,20 +164,22 @@ function addCard(evt) {
     toggleNewCard();
 };
 
-
-
-
+function togglePopup(popup) {
+    popup.classList.toggle("popup_opened")
+}
 
 function toggleEdit() {
-    popupEdit.classList.toggle("popup_opened")
+    togglePopup(popupEdit);
+    nameInput.value = profileTitle.textContent;
+    jobInput.value = profileSubtitle.textContent;
 }
 
 function toggleNewCard() {
-    popupNewCard.classList.toggle("popup_opened")
+    togglePopup(popupNewCard);
 }
 
 function toggleImage() {
-    popupImage.classList.toggle("popup_opened")
+    togglePopup(popupPicture);
 }
 
 
