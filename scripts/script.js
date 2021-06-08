@@ -13,8 +13,6 @@ const profileButton = document.querySelector(".profile__button");
 const popupEditSave = document.querySelector(".popup__button_type_edit");
 const popupAddSave = document.querySelector(".popup__button_type_add")
 
-
-//const closeImageButton = popupImage.querySelector('.popup__close');
 const addButton = document.querySelector(".profile__add-button");
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
@@ -179,7 +177,7 @@ function toggleNewCard() {
 }
 
 function toggleImage() {
-    togglePopup(popupPicture);
+    togglePopup(popupImage);
 }
 
 
