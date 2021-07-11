@@ -42,8 +42,10 @@
             <button type="button" class="popup__close"></button>
             <form class="popup__form popup__form_type_edit" name="edit-profile">
                 <h3 class="popup__title">Edit Profile</h3>
-                <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Name" required>
-                <input type="text" name="description" class="popup__input popup__input_type_description" placeholder="Job" required>
+                <input id="name-input" type="text" name="name" class="popup__input popup__input_type_name" placeholder="Name" required minlength="2" maxlength="40">
+                <span id="name-input-error"></span>
+                <input id="description-input" type="text" name="description" class="popup__input popup__input_type_description" placeholder="Job" required minlength="2" maxlength="200">
+                <span id="description-input-error"></span>
                 <button type="submit" class="popup__button popup__button_type_edit">save</button>
             </form>
         </div>
@@ -53,7 +55,7 @@
             <button type="button" class="popup__close"></button>
             <form class="popup__form popup__form_type_add" name="new-place">
                 <h3 class="popup__title">New Place</h3>
-                <input type="text" name="place-name" class="popup__input popup__input_type_card-name" placeholder="Title" required>
+                <input type="text" name="place-name" class="popup__input popup__input_type_card-name" placeholder="Title" required minlength="1" maxlength="30">
                 <input type="url" name="link" class="popup__input popup__input_type_url" placeholder="Image Link" required>
                 <button type="submit" class="popup__button popup__button_type_add">save</button>
             </form>
@@ -82,6 +84,7 @@
          </li> 
     </template>
     <script src="scripts/script.js"></script>
+    <script src="scripts/validate.js"></script>
 </body>
 
 </html>
