@@ -26,7 +26,7 @@ const hasValidInputs = (inputList) =>
 const toggleButton = (inputList, button, settings) => {
     if (hasValidInputs(inputList)) {
         button.disabled = false;
-        settings.inactiveButtonClass.remove;
+        button.classList.remove(settings.inactiveButtonClass);
     } else {
         button.disabled = true;
         button.classList.add(settings.inactiveButtonClass);

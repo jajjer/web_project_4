@@ -144,27 +144,50 @@ function addCard(evt) {
 //  popup.classList.add("popup_opened")
 //}
 
-function openPopup(popup) {
-    popup.classList.add("popup_opened");
-    document.addEventListener("keydown", (e) => {
-        if (e.keyCode === 27) {
-            closePopup(popup);
-        }
-    });
-}
+//function openPopup(popup) {
+//  popup.classList.add("popup_opened");
+//document.addEventListener("keydown", (e) => {
+//  if (e.keyCode === 27) {
+//    closePopup(popup);
+//}
+//});
+//}
 
 //function closePopup() {
 //  popup.classList.remove("popup_opened");
 //}
 
-function closePopup(popup) {
-    popup.classList.remove("popup_opened");
-    document.removeEventListener("keydown", (e) => {
-        if (e.keycode === 27) {
-            closePopup(popup);
-        }
-    });
+//function closePopup(popup) {
+//  popup.classList.remove("popup_opened");
+//document.removeEventListener("keydown", (e) => {
+//  if (e.keycode === 27) {
+//    closePopup(popup);
+//}
+//});
+//}
+
+
+
+
+function closeOnEscape(evt) {
+    evt.preventDefault();
+    if (e.keycode === 27) {
+        closePopup(document.querySelector('.popup_opened'));
+    }
+};
+
+function openPopup() {
+    // ... 
+    popup.classList.add("popup_opened");
+    document.addEventListener('keydown', closeOnEscape);
 }
+
+function closePopup() {
+    // ..
+    document.removeEventListener('keydown', closeOnEscape);
+}
+
+
 
 
 function toggleEdit() {
