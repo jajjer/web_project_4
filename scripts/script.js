@@ -1,8 +1,13 @@
+import Card from "./card";
+import FormValidator from "./validate";
+
+
 // ===== 
 // Wrappers 
 // ===== 
 const editFormElement = document.querySelector(".popup__form_type_edit");
 const addFormElement = document.querySelector(".popup__form_type_add");
+const formElement = document.querySelector(".popup__content");
 
 
 
@@ -47,6 +52,15 @@ const titleInput = document.querySelector(".popup__input_type_card-name");
 const imageInput = document.querySelector(".popup__input_type_url");
 
 
+const defaultSettings = {
+    inputSelector: ".modal-field__input",
+    submitButtonSelector: ".modal-field__button",
+    inactiveButtonSelector: "modal-field__button_disabled",
+    inputErrorClass: "modal-field__input_type_error",
+    errorClass: "modal-field__error_visible"
+}
+
+
 
 // ===== 
 // Element items 
@@ -83,7 +97,7 @@ const initialCards = [{
     }
 ];
 
-function createCard(card) {
+/*function createCard(card) {
     const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
     //clone the template 
     const cardElement = cardTemplate.cloneNode(true);
@@ -117,7 +131,7 @@ function createCard(card) {
     );
 
     return cardElement;
-};
+};*/
 
 function renderCard(card, elementList) {
     elementList.append(createCard(card));
@@ -137,43 +151,6 @@ function addCard(evt) {
     toggleNewCard();
 };
 
-
-
-
-
-//function togglePopup(popup) {
-//  popup.classList.toggle("popup_opened")
-//}
-
-//function openPopup(popup) {
-//  popup.classList.add("popup_opened")
-//}
-
-//function openPopup(popup) {
-//  popup.classList.add("popup_opened");
-//document.addEventListener("keydown", (e) => {
-//  if (e.keyCode === 27) {
-//    closePopup(popup);
-//}
-//});
-//}
-
-//function closePopup() {
-//  popup.classList.remove("popup_opened");
-//}
-
-//function closePopup(popup) {
-//  popup.classList.remove("popup_opened");
-//document.removeEventListener("keydown", (e) => {
-//  if (e.keycode === 27) {
-//    closePopup(popup);
-//}
-//});
-//}
-
-
-
-
 function closeOnEscape(evt) {
     evt.preventDefault();
     if (e.keycode === 27) {
@@ -182,7 +159,6 @@ function closeOnEscape(evt) {
 };
 
 function openPopup() {
-    // ... 
     popup.classList.add("popup_opened");
     document.addEventListener('keydown', closeOnEscape);
 }
@@ -191,9 +167,6 @@ function closePopup() {
     popup.classList.remove("popup_opened");
     document.removeEventListener('keydown', closeOnEscape);
 }
-
-
-
 
 function toggleEdit() {
     openPopup(popupEdit);
