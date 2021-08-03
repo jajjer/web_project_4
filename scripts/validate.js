@@ -1,11 +1,11 @@
 class FormValidator {
-    constructor(settings, formElement) {
+    constructor(config, formElement) {
         this._formElement = formElement;
-        this._inputSelector = settings.inputSelector;
-        this._submitButtonSelector = settings.submitButtonSelector;
-        this._inactiveButtonSelector = settings.inactiveButtonSelector;
-        this._inputErrorClass = settings.inputErrorClass;
-        this._errorClass = settings.errorClass;
+        this._inputSelector = config.inputSelector;
+        this._submitButtonSelector = config.submitButtonSelector;
+        this._inactiveButtonSelector = config.inactiveButtonSelector;
+        this._inputErrorClass = config.inputErrorClass;
+        this._errorClass = config.errorClass;
     };
 
     _showInputError = (input, formEl, { errorClass }) => {
@@ -65,4 +65,4 @@ class FormValidator {
     };
 }
 
-export { FormValidator };
+export default FormValidator;

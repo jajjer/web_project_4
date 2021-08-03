@@ -1,7 +1,5 @@
-import Card from "./card";
-import FormValidator from "./validate";
-
-
+import FormValidator from "./validate.js";
+import Card from "./card.js";
 // ===== 
 // Wrappers 
 // ===== 
@@ -97,7 +95,7 @@ const initialCards = [{
     }
 ];
 
-/*function createCard(card) {
+function createCard(card) {
     const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
     //clone the template 
     const cardElement = cardTemplate.cloneNode(true);
@@ -131,7 +129,7 @@ const initialCards = [{
     );
 
     return cardElement;
-};*/
+};
 
 function renderCard(card, elementList) {
     elementList.append(createCard(card));
@@ -199,9 +197,9 @@ function handleFormSubmit(evt) {
 // Event listeners 
 // ===== 
 profileButton.addEventListener("click", toggleEdit);
-closeEditButton.addEventListener("click", closePopup); //toggleEdit
+closeEditButton.addEventListener("click", closePopup);
 editFormElement.addEventListener("submit", handleFormSubmit);
 addButton.addEventListener("click", toggleNewCard);
-closeNewCardButton.addEventListener("click", closePopup); //toggleNewCard
+closeNewCardButton.addEventListener("click", closePopup);
 addFormElement.addEventListener("submit", addCard);
-closeImageButton.addEventListener("click", closePopup); //toggleImage
+closeImageButton.addEventListener("click", closePopup);

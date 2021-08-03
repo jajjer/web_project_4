@@ -32,4 +32,7 @@ class Card {
     }
 }
 
+//export default Card;
+//export default data;
+
 export default Card;
