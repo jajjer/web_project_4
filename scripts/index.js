@@ -1,5 +1,10 @@
-import FormValidator from "./validate.js";
-import Card from "./card.js";
+//// REVIEWER- THIS MAKES ABSOLUTELY NO SENSE AND I HAVE LEARNED NOTHING. I WATCHED THE TUTOR'S VIDEO AND DID EXACTLY WHAT HE DID AND IT DOESNT WORK SO PLEASE GIVE ME SOME ADVICE ON WHERE TO GO FROM HERE INSTEAD OF "THIS CANNOT BE REVIEWED" HONESTLY DON'T KNOW WHY I PAID MONEY FOR THIS COURSE
+
+
+
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
+
 // ===== 
 // Wrappers 
 // ===== 
@@ -31,6 +36,26 @@ const popup = document.querySelector(".popup");
 
 const popupPicture = document.querySelector(".popup__image");
 const popupCaption = document.querySelector(".popup__caption");
+
+
+const cardSelector = '#template__photo';
+
+// ====
+//Validation
+// ====
+const validationSettings = {
+    inputSelector: ".popup__input",
+    submitButtonSelector: ".popup__button",
+    inactiveButtonClass: "popup__button_disabled",
+    inputErrorClass: "popup__input_type_error",
+    errorClass: "popup__error_visible",
+};
+
+const editFormValidator = new FormValidator(validationSettings, editFormElement);
+const addFormValidator = new FormValidator(validationSettings, addFormElement);
+
+//editFormValidator.enableValidation();
+//addFormValidator.enableValidation();
 
 // ===== 
 //Close buttons for different popups 
@@ -107,12 +132,11 @@ function createCard(card) {
     const cardTitle = cardElement.querySelector(".element__title").textContent = card.name;
     // set values of name and image 
     cardImage.style.backgroundImage = `url(${card.link})`;
-    // add event listeners 
-    cardImage.addEventListener("click", () => {
-        toggleImage(popupImage);
-        popupPicture.src = card.link;
-        popupCaption.textContent = card.name;
-    });
+    //cardImage.addEventListener("click", () => {
+    //  toggleImage(popupImage);
+    //popupPicture.src = card.link;
+    //popupCaption.textContent = card.name;
+    //});
 
 
     // element items 
@@ -120,19 +144,23 @@ function createCard(card) {
     const deleteButton = cardElement.querySelector(".element__trash");
     const trashWrapper = cardElement.querySelector(".element__container");
 
-    likeButton.addEventListener("click", (e) =>
-        likeButton.classList.toggle("element__button_active")
-    );
 
-    deleteButton.addEventListener("click", (e) =>
-        cardElement.remove()
-    );
+
+
+    //likeButton.addEventListener("click", (e) =>
+    //  likeButton.classList.toggle("element__button_active")
+    //);
+
+    //deleteButton.addEventListener("click", (e) =>
+    //  cardElement.remove()
+    //);
 
     return cardElement;
 };
 
-function renderCard(card, elementList) {
-    elementList.append(createCard(card));
+function renderCard(data, elementList) {
+    const card = new Card(data, cardSelector)
+    elementList.append(card.getView());
 };
 
 initialCards.forEach(card => {
