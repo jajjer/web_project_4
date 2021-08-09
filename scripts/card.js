@@ -6,49 +6,49 @@ function closeOnEscape(evt) {
 };
 
 class Card {
-    constructor(card, cardSelector) {
+    constructor(card, cardTemplateSelector) {
         this._name = card.name;
         this._link = card.link;
-
-        this._likeButton =
-
-            this._cardSelector = cardSelector;
+        this._cardTemplateSelector = cardTemplateSelector;
     }
 
-    _setEventListeners() {
-        this._element.querySelector(".element__button").addEventListener("click", () => this._handleLikeIcon());
-        //likeButton.addEventListener("click", hadleLikeIcon);
-        this._element.querySelector(".element__trash").addEventListener("click", () => this._hadleDeleteCard());
-        //deleteButton.addEventListener("click", handleDeleteButton);
-        this._element.querySelector(".element__image").addEventListener("click", () => this._handlePreviewPicture.bind());
-        // cardImage.addEventListener("click", () => handlePreviewPicture)
+    _getCardTemplate() {
+        const cardElement = this._cardTemplateSelector.cloneNode(true);
+        return cardElement;
+        //document.querySelector(this._cardSelector).content.querySelector(".card").cloneNode(true);
     }
 
-    _handleLikeIcon() {
-        // likeButton.classList.toggle("element__button_active")
-        this._element.querySelector(".element__button").classList.toggle("element__button_active");
-    }
-
-    _hadleDeleteCard() {
-        this._element.remove()
-    }
-
-    _handlePreviewPicture() {
-        toggleImage(popupImage);
-    }
+    _setEventListeners(_card) {
+        const likeButton = _card.querySelector(".element__button");
+        const deleteButton = _card.querySelector(".element__trash");
+        const cardImage = _card.querySelector(".element__image");
 
 
-    _getTemplate() {
-        document.querySelector(this._cardSelector).content.querySelector(".card").cloneNode(true);
+        likeButton.addEventListener("click", () => {
+            likeButton.classList.toggle("element__button_active");
+        });
+
+        deleteButton.addEventListener("click", () => {
+            _card.remove();
+        });
+
+        cardImage.addEventListener("click", () => {
+            document.querySelector(".element__title").textContent = this._name;
+            document.querySelector(".element__image").src = this._link;
+            document.querySelector(".element__image").setAttribute("alt", document.querySelector(".element__title").textContent);
+            document.querySelector(".popup_type_image").classList.toggle('.popup_opened');
+        });
     }
 
     getView() {
-        this._element = this._getTemplate();
+        this._element = this._getCardTemplate();
 
         this._element.querySelector(".element__image").style.backgroundImage = `url(${card.link})`;
         this._element.querySelector(".element__title").textContent = card.name;
 
-        this._setEventListeners();
+        this._setEventListeners(this._card);
+
+        return this._card;
     }
 }
 

@@ -54,8 +54,8 @@ const validationSettings = {
 const editFormValidator = new FormValidator(validationSettings, editFormElement);
 const addFormValidator = new FormValidator(validationSettings, addFormElement);
 
-//editFormValidator.enableValidation();
-//addFormValidator.enableValidation();
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 // ===== 
 //Close buttons for different popups 
@@ -130,30 +130,14 @@ function createCard(card) {
 
     //query image element 
     const cardTitle = cardElement.querySelector(".element__title").textContent = card.name;
+
     // set values of name and image 
     cardImage.style.backgroundImage = `url(${card.link})`;
-    //cardImage.addEventListener("click", () => {
-    //  toggleImage(popupImage);
-    //popupPicture.src = card.link;
-    //popupCaption.textContent = card.name;
-    //});
-
 
     // element items 
     const likeButton = cardElement.querySelector(".element__button");
     const deleteButton = cardElement.querySelector(".element__trash");
     const trashWrapper = cardElement.querySelector(".element__container");
-
-
-
-
-    //likeButton.addEventListener("click", (e) =>
-    //  likeButton.classList.toggle("element__button_active")
-    //);
-
-    //deleteButton.addEventListener("click", (e) =>
-    //  cardElement.remove()
-    //);
 
     return cardElement;
 };
