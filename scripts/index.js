@@ -38,7 +38,11 @@ const popupPicture = document.querySelector(".popup__image");
 const popupCaption = document.querySelector(".popup__caption");
 
 
-const cardSelector = '#template__photo';
+const cardSelector = document.querySelector(".template__photo");
+//'#template__photo';
+
+
+const cardTemplate = document.querySelector(".template__photo").content.querySelector(".element__item");
 
 // ====
 //Validation
@@ -142,13 +146,13 @@ function createCard(card) {
     return cardElement;
 };
 
-function renderCard(data, elementList) {
-    const card = new Card(data, cardSelector)
-    elementList.append(card.getView());
+function renderCard(data, cardTemplate) {
+    const card = new Card(data, cardTemplate)
+    elementList.prepend(card.getView());
 };
 
-initialCards.forEach(card => {
-    renderCard(card, elementList)
+initialCards.forEach((card) => {
+    renderCard(card, cardTemplate)
 });
 
 function addCard(evt) {
