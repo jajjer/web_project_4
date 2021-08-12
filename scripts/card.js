@@ -1,9 +1,9 @@
-function closeOnEscape(evt) {
+/*function closeOnEscape(evt) {
     evt.preventDefault();
     if (e.keycode === 27) {
         closePopup(document.querySelector('.popup_opened'));
     }
-};
+};*/
 
 class Card {
     constructor(card, cardSelector) {

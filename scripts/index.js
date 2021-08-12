@@ -1,7 +1,3 @@
-//// REVIEWER- THIS MAKES ABSOLUTELY NO SENSE AND I HAVE LEARNED NOTHING. I WATCHED THE TUTOR'S VIDEO AND DID EXACTLY WHAT HE DID AND IT DOESNT WORK SO PLEASE GIVE ME SOME ADVICE ON WHERE TO GO FROM HERE INSTEAD OF "THIS CANNOT BE REVIEWED" HONESTLY DON'T KNOW WHY I PAID MONEY FOR THIS COURSE
-
-
-
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
 
@@ -124,7 +120,7 @@ const initialCards = [{
     }
 ];
 
-function createCard(card) {
+/*function createCard(card) {
     const cardTemplate = document.querySelector("#template__photo").content.querySelector(".element__item");
     //clone the template 
     const cardElement = cardTemplate.cloneNode(true);
@@ -144,13 +140,14 @@ function createCard(card) {
     const trashWrapper = cardElement.querySelector(".element__container");
 
     return cardElement;
-};
+};*/
 
 function renderCard(data, cardTemplate) {
     const card = new Card(data, cardTemplate)
     elementList.prepend(card.getView());
 };
 
+//render first 6 cards
 initialCards.forEach((card) => {
     renderCard(card, cardTemplate)
 });
@@ -165,12 +162,21 @@ function addCard(evt) {
     toggleNewCard();
 };
 
+//Close Popup
+
 function closeOnEscape(evt) {
     evt.preventDefault();
-    if (e.keycode === 27) {
+    if (evt.key === 'Escape') {
         closePopup(document.querySelector('.popup_opened'));
     }
 };
+
+
+popupImage.addEventListener('click', () => {
+    closePopup(popupImage);
+});
+
+
 
 function openPopup() {
     popup.classList.add("popup_opened");
@@ -182,6 +188,13 @@ function closePopup() {
     document.removeEventListener('keydown', closeOnEscape);
 }
 
+
+//function togglePopup() {
+//  openPopup(popup);
+//nameInput.value = profileTitle.textContent;
+//jobInput.value = profileSubtitle.textContent;
+//}
+
 function toggleEdit() {
     openPopup(popupEdit);
     nameInput.value = profileTitle.textContent;
@@ -192,9 +205,9 @@ function toggleNewCard() {
     openPopup(popupNewCard);
 }
 
-function toggleImage() {
-    openPopup(popupImage);
-}
+//function toggleImage() {
+//openPopup(popupImage);
+//}
 
 
 // ===== 
@@ -212,10 +225,11 @@ function handleFormSubmit(evt) {
 // ===== 
 // Event listeners 
 // ===== 
-profileButton.addEventListener("click", toggleEdit);
+profileButton.addEventListener("click", toggleEdit); //togglePopup
 closeEditButton.addEventListener("click", closePopup);
 editFormElement.addEventListener("submit", handleFormSubmit);
-addButton.addEventListener("click", toggleNewCard);
+addButton.addEventListener("click", toggleNewCard); //togglePopup
 closeNewCardButton.addEventListener("click", closePopup);
 addFormElement.addEventListener("submit", addCard);
 closeImageButton.addEventListener("click", closePopup);
+//popupImage.addEventListener("click", toggleImage);
