@@ -239,7 +239,7 @@ closeNewCardButton.addEventListener("click", () => {
 
 });
 
-addFormElement.addEventListener("submit", addCard);
+addFormElement.addEventListener("submit", handleFormSubmit);
 
 closeImageButton.addEventListener("click", () => {
     togglePopup(popupImage);
