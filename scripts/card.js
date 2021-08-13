@@ -33,10 +33,10 @@ class Card {
         });
 
         cardImage.addEventListener("click", () => {
-            document.querySelector(".element__title").textContent = this._name;
-            document.querySelector(".element__image").src = this._link;
-            document.querySelector(".element__image").setAttribute("alt", document.querySelector(".element__title").textContent);
-            document.querySelector(".popup_type_image").classList.toggle('.popup_opened');
+            document.querySelector(".popup__caption").textContent = this._name;
+            document.querySelector(".popup__image").src = this._link;
+            document.querySelector(".popup__image").setAttribute("alt", document.querySelector(".popup__caption").textContent);
+            document.querySelector(".popup_type_new-card").classList.toggle('.popup_opened');
         });
     }
 
