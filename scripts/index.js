@@ -183,12 +183,10 @@ addButton.addEventListener("click", () => {
 
 closeNewCardButton.addEventListener("click", () => {
     togglePopup(popupNewCard);
-
 });
 
 popupNewCard.addEventListener("submit", addCard);
 
 closeImageButton.addEventListener("click", () => {
     togglePopup(popupImage);
-
 });
