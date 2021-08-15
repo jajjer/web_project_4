@@ -41,10 +41,10 @@ class FormValidator {
     _toggleButton = (inputs, button, _inactiveButtonClass) => {
         if (this._validInput(inputs)) {
             button.disabled = false;
-            button.classList.remove(settings.inactiveButtonClass);
+            button.classList.remove(this._settings.inactiveButtonClass);
         } else {
             button.disabled = true;
-            button.classList.add(settings.inactiveButtonClass);
+            button.classList.add(this._settings.inactiveButtonClass);
         }
     };
 
