@@ -158,13 +158,14 @@ function togglePopup(popup) {
     jobInput.value = profileSubtitle.textContent;
 }
 
+popup.addEventListener('click', () => {
+    togglePopup(popup);
+})
+
+
 popupPicture.addEventListener('click', () => {
     togglePopup(popupImage);
 })
-
-/*popupImage.addEventListener('click', () => {
-    togglePopup(popupImage);
-});*/
 
 profileButton.addEventListener("click", () => {
     togglePopup(popupEdit);
