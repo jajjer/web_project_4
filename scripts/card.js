@@ -36,7 +36,7 @@ class Card {
             document.querySelector(".popup__caption").textContent = this._name;
             document.querySelector(".popup__image").src = this._link;
             document.querySelector(".popup__image").setAttribute("alt", document.querySelector(".popup__caption").textContent);
-            document.querySelector(".popup_type_image").classList.toggle('popup_opened');
+            document.querySelector(".popup_type_image").togglePopup;
         });
     }
 

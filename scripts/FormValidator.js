@@ -3,7 +3,7 @@ class FormValidator {
         this._settings = settings;
         this._inputSelector = settings.inputSelector;
         this._submitButtonSelector = settings.submitButtonSelector;
-        this._inactiveButtonClass = settings.inactiveButtonClass;
+        this._inactiveButtonSelector = settings._inactiveButtonSelector;
         this._inputErrorClass = settings.ErrorClass;
         this._errorClass = settings.errorClass;
 
@@ -38,12 +38,12 @@ class FormValidator {
         });
     };
 
-    _toggleButton = (inputs, button, _inactiveButtonClass) => {
+    _toggleButton = (inputs, button, _inactiveButtonSelector) => {
         if (this._validInput(inputs)) {
-            button.classList.add(_inactiveButtonClass);
+            button.classList.add(_inactiveButtonSelector);
             button.setAttribute("disabled", "");
         } else {
-            button.classList.remove(_inactiveButtonClass);
+            button.classList.remove(_inactiveButtonSelector);
             button.removeAttribute("disabled");
         }
     };

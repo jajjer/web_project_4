@@ -28,7 +28,7 @@ const popupEdit = document.querySelector(".popup_type_edit");
 const popupNewCard = document.querySelector(".popup_type_new-card");
 const popupImage = document.querySelector(".popup_type_image");
 
-const popup = document.querySelector(".popup");
+//const popup = document.querySelector(".popup");
 
 const popupPicture = document.querySelector(".popup__image");
 const popupCaption = document.querySelector(".popup__caption");
@@ -132,16 +132,21 @@ function addCard(evt) {
 
 //Close Popup
 
-window.addEventListener('keyup', (evt) => {
+function escapeClose(evt) {
     if (evt.key === 'Escape') {
         togglePopup();
     }
-});
+};
 
+function overlayClose(evt) {
+    if (evt.target.classList.contains("popup_opened")) {
+        togglePopup();
+    }
+}
 // ===== 
 // Handlers 
 // ===== 
-function handleFormSubmit(evt) {
+function handleEditFormSubmit(evt) {
     evt.preventDefault();
     profileTitle.textContent = nameInput.value;
     profileSubtitle.textContent = jobInput.value;
@@ -158,9 +163,13 @@ function togglePopup(popup) {
     jobInput.value = profileSubtitle.textContent;
 }
 
-popup.addEventListener('click', () => {
-    togglePopup(popup);
-})
+//open the popup
+document.addEventListener("keydown", escapeClose);
+document.addEventListener("click", overlayClose);
+
+//close the popup
+document.removeEventListener("keydown", escapeClose);
+document.removeEventListener("click", overlayClose);
 
 
 popupPicture.addEventListener('click', () => {
@@ -176,7 +185,7 @@ closeEditButton.addEventListener("click", () => {
     togglePopup(popupEdit);
 });
 
-popupEdit.addEventListener("submit", handleFormSubmit);
+popupEdit.addEventListener("submit", handleEditFormSubmit);
 
 addButton.addEventListener("click", () => {
     togglePopup(popupNewCard);
