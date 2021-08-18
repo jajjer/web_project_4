@@ -132,15 +132,19 @@ function addCard(evt) {
 
 //Close Popup
 
-function escapeClose(evt) {
+const handleEsc = (evt) => {
+    console.log('handleEsc ran')
     if (evt.key === 'Escape') {
-        togglePopup();
+        // find open popup
+        const openedPopup = document.querySelector(".popup_opened");
+        closePopup(openedPopup);
     }
 };
 
-function overlayClose(evt) {
-    if (evt.target.classList.contains("popup_opened")) {
-        togglePopup();
+function handleOverlayClick(e) {
+    if (e.target.classList.contains("popup_opened")) {
+        const openedPopup = document.querySelector(".popup_opened");
+        closePopup(openedPopup);
     }
 }
 // ===== 
@@ -150,53 +154,53 @@ function handleEditFormSubmit(evt) {
     evt.preventDefault();
     profileTitle.textContent = nameInput.value;
     profileSubtitle.textContent = jobInput.value;
-    togglePopup(popupEdit);
+    closePopup(popupEdit);
 }
 
 // ===== 
 // Event listeners 
 // ===== 
-function togglePopup(popup) {
-    popup.classList.toggle("popup_opened");
-
-    nameInput.value = profileTitle.textContent;
-    jobInput.value = profileSubtitle.textContent;
+function openPopup(popup) {
+    popup.classList.add("popup_opened");
+    document.addEventListener('keyup', handleEsc);
 }
 
-//open the popup
-document.addEventListener("keydown", escapeClose);
-document.addEventListener("click", overlayClose);
-
-//close the popup
-document.removeEventListener("keydown", escapeClose);
-document.removeEventListener("click", overlayClose);
+function closePopup(popup) {
+    popup.classList.remove("popup_opened");
+    document.removeEventListener("keyup", handleEsc);
+}
 
 
 popupPicture.addEventListener('click', () => {
-    togglePopup(popupImage);
+    openPopup(popupImage);
 })
 
 profileButton.addEventListener("click", () => {
-    togglePopup(popupEdit);
+    openPopup(popupEdit);
 
 });
 
 closeEditButton.addEventListener("click", () => {
-    togglePopup(popupEdit);
+    closePopup(popupEdit);
 });
 
 popupEdit.addEventListener("submit", handleEditFormSubmit);
 
 addButton.addEventListener("click", () => {
-    togglePopup(popupNewCard);
+    openPopup(popupNewCard);
 });
 
 closeNewCardButton.addEventListener("click", () => {
-    togglePopup(popupNewCard);
+    closePopup(popupNewCard);
 });
 
 popupNewCard.addEventListener("submit", addCard);
 
 closeImageButton.addEventListener("click", () => {
-    togglePopup(popupImage);
+    closePopup(popupImage);
 });
+
+// Overlay Click
+popupEdit.addEventListener('click', handleOverlayClick);
+popupNewCard.addEventListener('click', handleOverlayClick);
+popupImage.addEventListener('click', handleOverlayClick);

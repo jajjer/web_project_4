@@ -3,7 +3,8 @@
     width: 282px;
     align-self: flex-start;
     background-size: cover;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     outline: none;
     cursor: pointer;
     border: none;
