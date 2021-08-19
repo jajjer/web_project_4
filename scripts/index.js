@@ -46,7 +46,7 @@ const cardTemplate = document.querySelector(".template__photo").content.querySel
 const validationSettings = {
     inputSelector: ".popup__input",
     submitButtonSelector: ".popup__button",
-    inactiveButtonClass: "popup__button_disabled",
+    inactiveButtonSelector: "popup__button_disabled",
     inputErrorClass: "popup__input_type_error",
     errorClass: "popup__error_visible",
 };
@@ -127,7 +127,7 @@ function addCard(evt) {
     const imageInput = popupNewCard.querySelector(".popup__input_type_url");
 
     renderCard({ name: titleInput.value, link: imageInput.value }, cardTemplate);
-    togglePopup(popupNewCard);
+    closePopup(popupNewCard);
 };
 
 //Close Popup
@@ -176,6 +176,8 @@ popupPicture.addEventListener('click', () => {
 })
 
 profileButton.addEventListener("click", () => {
+    nameInput.value = profileTitle.textContent;
+    jobInput.value = profileSubtitle.textContent;
     openPopup(popupEdit);
 
 });
