@@ -19,11 +19,16 @@ class PopupWithForm extends Popup {
     }
 
     setEventListeners() {
-
+        const closeButton = this._popup.querySelector(".popup__close");
+        closeButton.addEventListener("click", () => {
+            this._close();
+        });
+        popupEdit.addEventListener("submit", handleEditFormSubmit);
     }
 
     close() {
-
+        this._popupForm.reset();
+        super.close();
     }
 }
 
