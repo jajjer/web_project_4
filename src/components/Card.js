@@ -23,10 +23,11 @@ function closeImagePopup() {
 }
 
 class Card {
-    constructor(card, cardSelector) {
+    constructor(card, cardSelector, handleCardClick) {
         this._name = card.name;
         this._link = card.link;
         this._cardSelector = cardSelector;
+        this._openPopup = handleCardClick;
     }
 
     _getCardTemplate() {

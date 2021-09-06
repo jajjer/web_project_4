@@ -1,12 +1,25 @@
-import FormValidator from "../components/FormValidator.js";
-import Card from "../components/Card.js";
+//import styles
 import "../pages/index.css";
+
+//import hard coded images
+import "../images/Cousteau.jpg";
+import "../images/filledblackheart.svg";
+
+//import components
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
+
+import { elementList, profileButton, addFormElement, addButton, profileTitle, profileSubtitle, nameInput, jobInput } from '../utils/constants.js';
 
 // ===== 
 // Wrappers 
 // ===== 
-const editFormElement = document.querySelector(".popup__form_type_edit");
-const addFormElement = document.querySelector(".popup__form_type_add");
+//const editFormElement = document.querySelector(".popup__form_type_edit"); added to constants.js
+//const addFormElement = document.querySelector(".popup__form_type_add"); added to constants.js
 const formElement = document.querySelector(".popup__content");
 
 
@@ -14,12 +27,12 @@ const formElement = document.querySelector(".popup__content");
 // ===== 
 //Buttons & DOM elements 
 // ===== 
-const profileButton = document.querySelector(".profile__button");
+//const profileButton = document.querySelector(".profile__button"); added to constants.js
 const popupEditSave = document.querySelector(".popup__button_type_edit");
 const popupAddSave = document.querySelector(".popup__button_type_add");
-const addButton = document.querySelector(".profile__add-button");
-const profileTitle = document.querySelector(".profile__title");
-const profileSubtitle = document.querySelector(".profile__subtitle");
+//const addButton = document.querySelector(".profile__add-button"); added to constants.js
+//const profileTitle = document.querySelector(".profile__title"); added to constants.js
+//const profileSubtitle = document.querySelector(".profile__subtitle"); added to constants.js
 
 
 // ===== 
@@ -29,7 +42,7 @@ const popupEdit = document.querySelector(".popup_type_edit");
 const popupNewCard = document.querySelector(".popup_type_new-card");
 const popupImage = document.querySelector(".popup_type_image");
 
-//const popup = document.querySelector(".popup");
+const popupElement = document.querySelector(".popup");
 
 const popupPicture = document.querySelector(".popup__image");
 const popupCaption = document.querySelector(".popup__caption");
@@ -70,8 +83,8 @@ const closeImageButton = popupImage.querySelector('.popup__close');
 // ===== 
 // Form data 
 // ===== 
-const nameInput = document.querySelector(".popup__input_type_name");
-const jobInput = document.querySelector(".popup__input_type_description");
+//const nameInput = document.querySelector(".popup__input_type_name"); added to constants.js
+//const jobInput = document.querySelector(".popup__input_type_description"); added to constants.js
 
 
 
@@ -83,7 +96,7 @@ const jobInput = document.querySelector(".popup__input_type_description");
 const likeButtonActive = document.querySelector(".element__button_active");
 const elementTitle = document.querySelector(".element__title");
 const elementImage = document.querySelector(".element__image");
-const elementList = document.querySelector(".element");
+//const elementList = document.querySelector(".element"); moved to constants.js
 
 const initialCards = [{
         name: "Yosemite Valley",
@@ -134,7 +147,7 @@ function addCard(evt) {
 //Close Popup
 
 const handleEsc = (evt) => {
-    console.log('handleEsc ran')
+    //console.log('handleEsc ran')
     if (evt.key === 'Escape') {
         // find open popup
         const openedPopup = document.querySelector(".popup_opened");
@@ -148,6 +161,7 @@ function handleOverlayClick(e) {
         closePopup(openedPopup);
     }
 }
+
 // ===== 
 // Handlers 
 // ===== 
@@ -161,6 +175,7 @@ function handleEditFormSubmit(evt) {
 // ===== 
 // Event listeners 
 // ===== 
+
 function openPopup(popup) {
     popup.classList.add("popup_opened");
     document.addEventListener('keyup', handleEsc);
