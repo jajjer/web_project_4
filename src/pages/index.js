@@ -18,8 +18,7 @@ import { elementList, profileButton, addFormElement, addButton, profileTitle, pr
 // ===== 
 // Wrappers 
 // ===== 
-//const editFormElement = document.querySelector(".popup__form_type_edit"); added to constants.js
-//const addFormElement = document.querySelector(".popup__form_type_add"); added to constants.js
+
 const formElement = document.querySelector(".popup__content");
 
 
@@ -27,12 +26,9 @@ const formElement = document.querySelector(".popup__content");
 // ===== 
 //Buttons & DOM elements 
 // ===== 
-//const profileButton = document.querySelector(".profile__button"); added to constants.js
+
 const popupEditSave = document.querySelector(".popup__button_type_edit");
 const popupAddSave = document.querySelector(".popup__button_type_add");
-//const addButton = document.querySelector(".profile__add-button"); added to constants.js
-//const profileTitle = document.querySelector(".profile__title"); added to constants.js
-//const profileSubtitle = document.querySelector(".profile__subtitle"); added to constants.js
 
 
 // ===== 
@@ -78,17 +74,6 @@ const closeEditButton = popupEdit.querySelector('.popup__close');
 const closeNewCardButton = popupNewCard.querySelector('.popup__close');
 const closeImageButton = popupImage.querySelector('.popup__close');
 
-
-
-// ===== 
-// Form data 
-// ===== 
-//const nameInput = document.querySelector(".popup__input_type_name"); added to constants.js
-//const jobInput = document.querySelector(".popup__input_type_description"); added to constants.js
-
-
-
-
 // ===== 
 // Element items 
 // ===== 
@@ -96,7 +81,6 @@ const closeImageButton = popupImage.querySelector('.popup__close');
 const likeButtonActive = document.querySelector(".element__button_active");
 const elementTitle = document.querySelector(".element__title");
 const elementImage = document.querySelector(".element__image");
-//const elementList = document.querySelector(".element"); moved to constants.js
 
 const initialCards = [{
         name: "Yosemite Valley",
