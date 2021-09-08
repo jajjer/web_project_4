@@ -130,7 +130,7 @@ function addCard(evt) {
 
 //Close Popup
 
-const handleEsc = (evt) => {
+/*const handleEsc = (evt) => {
     //console.log('handleEsc ran')
     if (evt.key === 'Escape') {
         // find open popup
@@ -145,6 +145,9 @@ function handleOverlayClick(e) {
         closePopup(openedPopup);
     }
 }
+ADDED TO POPUP
+
+*/
 
 // ===== 
 // Handlers 
@@ -160,7 +163,7 @@ function handleEditFormSubmit(evt) {
 // Event listeners 
 // ===== 
 
-function openPopup(popup) {
+/*function openPopup(popup) {
     popup.classList.add("popup_opened");
     document.addEventListener('keyup', handleEsc);
 }
@@ -170,7 +173,8 @@ function closePopup(popup) {
     document.removeEventListener("keyup", handleEsc);
 }
 
-
+MOVED TO POPUP.js
+*/
 popupPicture.addEventListener('click', () => {
     openPopup(popupImage);
 })
