@@ -2,8 +2,8 @@ import { ESC_KEYCODE } from '../utils/constants.js';
 
 class Popup {
     constructor(popupSelector) {
-        this._popupElement = document.querySelector(`.${popupSelector}`);
-        this._handleEscUp = this._handleEscUp.bind(this);
+        this._popup = document.querySelector(`.${popupSelector}`);
+        // this._handleEscUp = this._handleEscUp.bind(this);
     }
 
     open() {
@@ -13,7 +13,7 @@ class Popup {
 
     close() {
         popup.classList.remove("popup_opened");
-        document.removeEventListener("keyup", ._handleEscUp);
+        document.removeEventListener("keyup", this._handleEscUp.bind(this));
     }
 
     _handleEscClose(evt) {

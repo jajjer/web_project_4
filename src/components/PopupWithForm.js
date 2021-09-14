@@ -4,7 +4,7 @@ class PopupWithForm extends Popup {
     constructor({ popupElement, handleFormSubmit }) {
         super(popupElement);
 
-        this._popupForm = this._popupElement.querySelector(".popup__form")
+        this._popupForm = this._popup.querySelector(".popup__form")
         this._handleFormSubmit = handleFormSubmit;
     }
 
@@ -23,7 +23,7 @@ class PopupWithForm extends Popup {
         closeButton.addEventListener("click", () => {
             this._close();
         });
-        popupEdit.addEventListener("submit", handleEditFormSubmit);
+        this._popupForm.addEventListener("submit", this._handleFormSubmit.bind(this));
     }
 
     close() {
