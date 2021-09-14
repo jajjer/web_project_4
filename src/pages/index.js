@@ -129,8 +129,14 @@ const newCardPopup = new PopupWithForm({
     }
 })
 
+const imagePopup = new PopupWithImage("popup_type_image");
+
+/*const infoUser = new UserInfo();*/
+
 editPopup.setEventListeners();
 newCardPopup.setEventListeners();
+imagePopup.setEventListeners();
+/*infoUser.setEventListeners();*/
 
 function renderCard(data, cardSelector) {
     const card = new Card(data, cardSelector)
