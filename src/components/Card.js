@@ -1,26 +1,6 @@
-const imagePopup = document.querySelector('.popup_type_image');
 const popupCaption = document.querySelector(".popup__caption");
 const popupImage = document.querySelector(".popup__image");
 
-
-const handleEsc = (evt) => {
-    console.log('handleEsc ran')
-    if (evt.key === 'Escape') {
-        // find open popup
-        const openedPopup = document.querySelector(".popup_opened");
-        closeImagePopup(openedPopup);
-    }
-};
-
-function openImagePopup() {
-    imagePopup.classList.add("popup_opened");
-    document.addEventListener('keyup', handleEsc);
-}
-
-function closeImagePopup() {
-    imagePopup.classList.remove("popup_opened");
-    document.removeEventListener("keyup", handleEsc);
-}
 
 class Card {
     constructor(card, cardSelector, handleCardClick) {
