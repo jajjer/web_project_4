@@ -119,13 +119,9 @@ const editPopup = new PopupWithForm({
 
 const newCardPopup = new PopupWithForm({
     popupElement: 'popup_type_new-card',
-    handleFormSubmit: (e) => {
-        //e.preventDefault();
-        const titleInput = popupNewCard.querySelector(".popup__input_type_card-name");
-        const imageInput = popupNewCard.querySelector(".popup__input_type_url");
-
-        renderCard({ name: titleInput.value, link: imageInput.value }, cardTemplate);
-        editPopup.close(newCardPopup);
+    handleFormSubmit: (data) => {
+        renderCard({ name: data.name, link: data.link }, cardTemplate);
+        newCardPopup.close();
     }
 })
 
@@ -156,28 +152,12 @@ profileButton.addEventListener("click", () => {
 
 });
 
-closeEditButton.addEventListener("click", () => {
-    //close(popupEdit);
-    editPopup.close();
-});
-
-
 addButton.addEventListener("click", () => {
     //open(popupNewCard);
     newCardPopup.open();
-});
-
-closeNewCardButton.addEventListener("click", () => {
-    //close(popupNewCard);
-    newCardPopup.close();
 });
 
 popupPicture.addEventListener("click", () => {
     //open(popupImage);
     imagePopup.open();
 })
-
-closeImageButton.addEventListener("click", () => {
-    //close(popupImage);
-    imagePopup.close();
-});

@@ -6,14 +6,14 @@ class Card {
     constructor(card, cardSelector, handleCardClick) {
         this._name = card.name;
         this._link = card.link;
-        this._cardSelector = cardSelector;
+        this._cardSelector = document.querySelector(cardSelector);
         this._openPopup = handleCardClick;
     }
 
     _getCardTemplate() {
         const cardElement = this._cardSelector.cloneNode(true);
         return cardElement;
-        //document.querySelector(this._cardSelector).content.querySelector(".card").cloneNode(true);
+        document.querySelector(this._cardSelector).content.querySelector(".card").cloneNode(true);
     }
 
     _setEventListeners(_card) {

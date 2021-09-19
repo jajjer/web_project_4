@@ -23,7 +23,6 @@ class PopupWithForm extends Popup {
         closeButton.addEventListener("click", () => {
             close();
         });
-        this._popupForm.addEventListener("submit", this._handleFormSubmit.bind(this));
 
         this._popupForm.addEventListener('submit', (evt) => {
             evt.preventDefault();
