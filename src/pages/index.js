@@ -110,10 +110,9 @@ const initialCards = [{
 
 const editPopup = new PopupWithForm({
     popupElement: 'popup_type_edit',
-    handleFormSubmit: (e) => {
-        profileTitle.textContent = nameInput.value;
-        profileSubtitle.textContent = jobInput.value;
-        editPopup.close()
+    handleFormSubmit: (data) => {
+        renderCard({ name: data.name, link: data.link }, cardTemplate);
+        editPopup.close();
     }
 });
 
@@ -135,7 +134,8 @@ imagePopup.setEventListeners();
 /*infoUser.setEventListeners();*/
 
 function renderCard(data, cardSelector) {
-    const card = new Card(data, cardSelector)
+    console.log(cardSelector);
+    const card = new Card(data, '.template__photo')
     elementList.prepend(card.getView());
 };
 
