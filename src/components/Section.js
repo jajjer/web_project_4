@@ -13,6 +13,10 @@ class Section {
 
     }
 
+    initialCards.forEach((card) => {
+        renderCard(card, cardTemplate)
+    });
+
     addItem(element) {
         this._container.append(element);
     }

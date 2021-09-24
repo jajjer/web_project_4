@@ -133,16 +133,15 @@ newCardPopup.setEventListeners();
 imagePopup.setEventListeners();
 /*infoUser.setEventListeners();*/
 
-function renderCard(data, cardSelector) {
-    console.log(cardSelector);
+function renderCard(data, cardSelector, handleCardClick) {
     const card = new Card(data, '.template__photo')
     elementList.prepend(card.getView());
 };
 
 //render first 6 cards
-initialCards.forEach((card) => {
+/*initialCards.forEach((card) => {
     renderCard(card, cardTemplate)
-});
+});*/
 
 profileButton.addEventListener("click", () => {
     nameInput.value = profileTitle.textContent;
