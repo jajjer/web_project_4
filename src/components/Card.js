@@ -11,8 +11,7 @@ class Card {
     }
 
     _getCardTemplate() {
-        //return document.querySelector(this._cardSelector).content.querySelector('.element__item').cloneNode(true);
-        const cardElement = this._card.content.querySelector('.element__item').cloneNode(true);
+        const cardElement = document.querySelector(this._templateSelector).content.querySelector('.element__item').cloneNode(true);
         return cardElement;
     }
 
