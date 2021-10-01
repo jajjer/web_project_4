@@ -109,7 +109,7 @@ const initialCards = [{
 ];
 
 const editPopup = new PopupWithForm({
-    popupElement: 'popup_type_edit',
+    popupElement: '.popup_type_edit',
     handleFormSubmit: (data) => {
         renderCard({ name: data.name, link: data.link }, cardTemplate);
         editPopup.close();
@@ -117,14 +117,26 @@ const editPopup = new PopupWithForm({
 });
 
 const newCardPopup = new PopupWithForm({
-    popupElement: 'popup_type_new-card',
+    popupElement: '.popup_type_new-card',
     handleFormSubmit: (data) => {
         renderCard({ name: data.name, link: data.link }, cardTemplate);
         newCardPopup.close();
     }
 })
 
-const imagePopup = new PopupWithImage("popup_type_image");
+const imagePopup = new PopupWithImage(".popup_type_image");
+
+const cardsList = new Section({
+        items: initialCards,
+        renderer: (item) => {
+            const newCard = new Card(item);
+            cardsList.setItems(newCard.getView());
+        },
+    },
+    elementList
+);
+
+cardsList.renderItems(initialCards);
 
 /*const infoUser = new UserInfo();*/
 
@@ -152,11 +164,9 @@ profileButton.addEventListener("click", () => {
 });
 
 addButton.addEventListener("click", () => {
-    //open(popupNewCard);
     newCardPopup.open();
 });
 
 popupPicture.addEventListener("click", () => {
-    //open(popupImage);
     imagePopup.open();
 })
