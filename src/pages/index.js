@@ -108,13 +108,15 @@ const initialCards = [{
     }
 ];
 
-const editPopup = new PopupWithForm({
-    popupElement: '.popup_type_edit',
-    handleFormSubmit: (data) => {
-        renderCard({ name: data.name, link: data.link }, cardTemplate);
-        editPopup.close();
-    }
-});
+//PLEASE TELL ME WHAT EXACTLY IS WRONG WITH THIS I DO NOT UNDERSTAND AND WILL QUIT THIS STUPID PROGRAM IF I DON'T GET SOME SORT OF FEEDBACK
+
+//const editPopup = new PopupWithForm({
+//  popupElement: '.popup_type_edit',
+//handleFormSubmit: (data) => {
+//  renderCard({ name: data.name, link: data.link }, cardTemplate);
+//editPopup.close();
+//}
+//});
 
 const newCardPopup = new PopupWithForm({
     popupElement: '.popup_type_new-card',
