@@ -15,15 +15,10 @@ class PopupWithForm extends Popup {
             data[input.name] = input.value;
         });
         return data;
-
     }
 
     setEventListeners() {
-        const closeButton = this._popup.querySelector(".popup__close");
-        closeButton.addEventListener("click", () => {
-            close();
-        });
-
+        super.setEventListeners();
         this._popupForm.addEventListener('submit', (evt) => {
             evt.preventDefault();
             this._handleFormSubmit(this._getInputValues());

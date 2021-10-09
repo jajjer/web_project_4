@@ -108,15 +108,17 @@ const initialCards = [{
     }
 ];
 
-//PLEASE TELL ME WHAT EXACTLY IS WRONG WITH THIS I DO NOT UNDERSTAND AND WILL QUIT THIS STUPID PROGRAM IF I DON'T GET SOME SORT OF FEEDBACK
+function openCardPopup(name, link) {
+    imagePopup.open(data);
+}
 
-//const editPopup = new PopupWithForm({
-//  popupElement: '.popup_type_edit',
-//handleFormSubmit: (data) => {
-//  renderCard({ name: data.name, link: data.link }, cardTemplate);
-//editPopup.close();
-//}
-//});
+const editPopup = new PopupWithForm({
+    popupElement: '.popup_type_edit',
+    handleFormSubmit: (data) => {
+        info.setUserInfo(data.name, data.description);
+        editPopup.close();
+    }
+});
 
 const newCardPopup = new PopupWithForm({
     popupElement: '.popup_type_new-card',
@@ -131,8 +133,11 @@ const imagePopup = new PopupWithImage(".popup_type_image");
 const cardsList = new Section({
         items: initialCards,
         renderer: (item) => {
-            const newCard = new Card(item);
-            cardsList.setItems(newCard.getView());
+            const newCard = new Card(item, cardSelector, (data) => {
+                imagePopup.open(data);
+            });
+            cardsList.addItem(renderCard(item));
+            //cardsList.setItems(newCard.getView());
         },
     },
     elementList
@@ -140,7 +145,7 @@ const cardsList = new Section({
 
 cardsList.renderItems(initialCards);
 
-/*const infoUser = new UserInfo();*/
+//const infoUser = new UserInfo();
 
 editPopup.setEventListeners();
 newCardPopup.setEventListeners();
@@ -148,7 +153,9 @@ imagePopup.setEventListeners();
 /*infoUser.setEventListeners();*/
 
 function renderCard(data, cardSelector, handleCardClick) {
-    const card = new Card(data, '.template__photo')
+    const card = new Card(data, {
+        handleCardClick: openCardPopup
+    }, '.template__photo')
     elementList.prepend(card.getView());
 };
 

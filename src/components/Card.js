@@ -3,15 +3,15 @@ const popupImage = document.querySelector(".popup__image");
 
 
 class Card {
-    constructor(card, cardSelector, handleCardClick) {
+    constructor(card, cardSelector, { handleCardClick }) {
         this._name = card.name;
         this._link = card.link;
         this._cardSelector = cardSelector;
-        this._openPopup = handleCardClick;
+        this._handleCardClick = handleCardClick;
     }
 
     _getCardTemplate() {
-        const cardElement = document.querySelector(this._cardSelector).content.querySelector('.element__item').cloneNode(true);
+        const cardElement = document.querySelector(".template__photo").content.querySelector(".element__item").cloneNode(true);
         return cardElement;
     }
 
@@ -33,7 +33,7 @@ class Card {
             popupCaption.textContent = this._name;
             popupImage.src = this._link;
             popupImage.setAttribute("alt", popupCaption.textContent);
-            openImagePopup();
+            //openImagePopup();
         });
     }
 
