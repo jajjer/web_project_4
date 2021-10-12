@@ -14,6 +14,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 
 import { elementList, profileButton, addFormElement, addButton, profileTitle, profileSubtitle, nameInput, jobInput } from '../utils/constants.js';
+import { data } from "autoprefixer";
 
 // ===== 
 // Wrappers 
@@ -133,7 +134,7 @@ const imagePopup = new PopupWithImage(".popup_type_image");
 const cardsList = new Section({
         items: initialCards,
         renderer: (item) => {
-            const card = new Card(data, {
+            const card = new Card(item, {
                 handleCardClick: openCardPopup
             });
             cardsList.addItem(renderCard(item));
