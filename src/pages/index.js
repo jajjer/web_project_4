@@ -133,8 +133,8 @@ const imagePopup = new PopupWithImage(".popup_type_image");
 const cardsList = new Section({
         items: initialCards,
         renderer: (item) => {
-            const newCard = new Card(item, cardSelector, (data) => {
-                imagePopup.open(data);
+            const card = new Card(data, {
+                handleCardClick: openCardPopup
             });
             cardsList.addItem(renderCard(item));
             //cardsList.setItems(newCard.getView());

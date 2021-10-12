@@ -29,12 +29,12 @@ class Card {
             _card.remove();
         });
 
-        cardImage.addEventListener("click", () => {
+        /*cardImage.addEventListener("click", () => {
             popupCaption.textContent = this._name;
             popupImage.src = this._link;
             popupImage.setAttribute("alt", popupCaption.textContent);
             //openImagePopup();
-        });
+        });*/
     }
 
     getView() {
