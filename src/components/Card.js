@@ -29,6 +29,10 @@ class Card {
             _card.remove();
         });
 
+        cardImage.addEventListener('click', () => {
+            this._handleCardClick(this._name, this._link);
+        });
+
         /*cardImage.addEventListener("click", () => {
             popupCaption.textContent = this._name;
             popupImage.src = this._link;

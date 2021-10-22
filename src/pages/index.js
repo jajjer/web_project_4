@@ -134,9 +134,7 @@ const imagePopup = new PopupWithImage(".popup_type_image");
 const cardsList = new Section({
         items: initialCards,
         renderer: (item) => {
-            const card = new Card(item, {
-                handleCardClick: openCardPopup
-            });
+            const card = new Card(item, '.template__photo', { handleCardClick: openCardPopup });
             cardsList.addItem(renderCard(item));
             //cardsList.setItems(newCard.getView());
         },
@@ -154,10 +152,8 @@ imagePopup.setEventListeners();
 /*infoUser.setEventListeners();*/
 
 function renderCard(data, cardSelector, handleCardClick) {
-    const card = new Card(data, {
-        handleCardClick: openCardPopup
-    }, '.template__photo')
-    elementList.prepend(card.getView());
+    const card = new Card(item, '.template__photo', { handleCardClick: openCardPopup });
+    cardsList.addItem(card.getView());
 };
 
 //render first 6 cards
